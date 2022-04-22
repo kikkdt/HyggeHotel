@@ -1,0 +1,7 @@
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\DTO\bin\Debug\DTO.dll.config
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\DTO\bin\Debug\DTO.dll
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\DTO\bin\Debug\DTO.pdb
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\DTO\obj\Debug\DTO.dll
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\DTO\obj\Debug\DTO.pdb

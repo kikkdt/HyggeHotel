@@ -1,0 +1,12 @@
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\BLL\bin\Debug\BLL.dll
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\BLL\bin\Debug\BLL.pdb
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\BLL\bin\Debug\DAL.dll
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\BLL\bin\Debug\DTO.dll
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\BLL\bin\Debug\DAL.pdb
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\BLL\bin\Debug\DTO.pdb
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\BLL\bin\Debug\DTO.dll.config
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\BLL\obj\Debug\BLL.dll
+D:\Projects\3. Do an HK6\Software testing\HyggeHotel\BLL\obj\Debug\BLL.pdb
