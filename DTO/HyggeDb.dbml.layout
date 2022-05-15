@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14, 20.5" name="HyggeDb">
+  <DataContextMoniker Name="/HyggeDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1839bd87-fef7-4ead-9fcf-9252ddbeec79" absoluteBounds="9, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/HyggeDbDataContext/tb_CTDatPhong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9508648c-fa0d-4ccc-9b9b-0c73fa3f2c3e" absoluteBounds="9.015, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4b5de50f-823f-40fd-ab7b-4a8fff1c4003" absoluteBounds="3.5, 15.375, 2, 2.1554996744791648">
+      <DataClassMoniker Name="/HyggeDbDataContext/tb_TangLau" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aaa135ba-a04a-44cc-b004-03f7cea57f91" absoluteBounds="3.515, 15.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f89d37c6-739d-44d1-9244-9605cb5f0c5f" absoluteBounds="11.75, 1.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/HyggeDbDataContext/tb_CTDatPhong_SanPham" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f66475ef-ca01-43a7-8a3b-1effa613cab2" absoluteBounds="11.765, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cdeaf0a4-03af-4e64-91cb-ff4cade1a725" absoluteBounds="6.25, 10.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/HyggeDbDataContext/tb_Gia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="932c9d55-8030-4b17-b6aa-3df3b729a9a8" absoluteBounds="6.265, 11.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9d242bcb-b286-45ed-9b5c-598d9725baaa" absoluteBounds="9, 3.875, 2, 2.155499674479167">
+      <DataClassMoniker Name="/HyggeDbDataContext/tb_HoaDon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c7d83e1d-1a3f-42b9-afb7-3a7de81daacf" absoluteBounds="9.015, 4.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="55afe235-8887-41f0-9067-6e60d5aaffaa" absoluteBounds="8.75, 11, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/HyggeDbDataContext/tb_Identify" />
+      <nestedChildShapes>
+        <elementListCompartment Id="68a14cc0-48c4-453f-82c5-98934f1bbc5f" absoluteBounds="8.765, 11.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2bd9396e-ebf2-415e-b172-b743dfbfa4ec" absoluteBounds="3.5, 8.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/HyggeDbDataContext/tb_KhachHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20105dde-ff82-4dec-aa68-555ba0783780" absoluteBounds="3.515, 8.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2cddbe80-9858-4abd-b909-b305ff3dc218" absoluteBounds="3.5, 19, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/HyggeDbDataContext/tb_LoaiGia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8a40301-763e-4a96-98aa-a66c1b954401" absoluteBounds="3.515, 19.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="58109d8c-7d8c-45b7-9fce-22eb0cf71334" absoluteBounds="3.5, 12.625, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/HyggeDbDataContext/tb_LoaiPhong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="155f4d91-2389-4f4a-bdda-496d13af319d" absoluteBounds="3.515, 13.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="10921a41-6622-424f-85b7-45768fbfb737" absoluteBounds="3.5, 3.375, 2, 3.1170068359374996">
+      <DataClassMoniker Name="/HyggeDbDataContext/tb_NhanVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb87f090-08de-4508-9112-434466b47465" absoluteBounds="3.515, 3.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e7c58690-586a-4095-abd0-e69238c9a227" absoluteBounds="6.25, 7.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/HyggeDbDataContext/tb_NhomSanPham" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c75d22ae-f330-45bf-81b5-d925dbbb26c9" absoluteBounds="6.265, 8.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4941810a-6e3e-4ea8-a7c5-1659b263df85" absoluteBounds="6.25, 3.875, 2, 2.155499674479167">
+      <DataClassMoniker Name="/HyggeDbDataContext/tb_PhieuDatPhong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f643e702-88c6-40d0-82ff-6d819a148969" absoluteBounds="6.265, 4.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="99edcff9-61b6-40f6-b7e6-111f6d246927" absoluteBounds="6.25, 14.125, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/HyggeDbDataContext/tb_Phong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f928db8-ce82-4f58-a2cc-fe9221627bbf" absoluteBounds="6.265, 14.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="816de0a4-31d0-4406-9eaf-a37328f54b4d" absoluteBounds="9, 7.625, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/HyggeDbDataContext/tb_SanPham" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff359466-53c3-409f-b1d9-4e2268228207" absoluteBounds="9.015, 8.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ab9dca23-baed-4475-8c67-7f368e5a5b40" absoluteBounds="0.75, 4.25, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/HyggeDbDataContext/tb_TaiKhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8c8421a3-3424-40cb-aaa4-a8b807adc1e9" absoluteBounds="0.765, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11 : 1.91429768880208); (11.75 : 1.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HyggeDbDataContext/tb_CTDatPhong/tb_CTDatPhong_tb_CTDatPhong_SanPham" />
+      <nodes>
+        <classShapeMoniker Id="1839bd87-fef7-4ead-9fcf-9252ddbeec79" />
+        <classShapeMoniker Id="f89d37c6-739d-44d1-9244-9605cb5f0c5f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 19); (5.875 : 18.625); (5.875 : 11.6354484049479); (6.25 : 11.6354484049479)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HyggeDbDataContext/tb_LoaiGia/tb_LoaiGia_tb_Gia" />
+      <nodes>
+        <classShapeMoniker Id="2cddbe80-9858-4abd-b909-b305ff3dc218" />
+        <classShapeMoniker Id="cdeaf0a4-03af-4e64-91cb-ff4cade1a725" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 12.6869152522536); (5.81607443490112 : 12.3708408173525 : JumpStart); (5.93392556509888 : 12.2529896871547 : JumpEnd); (6.0625 : 12.1244152522536); (6.0625 : 12.7097580382111); (6.2513612283153 : 12.5208968098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HyggeDbDataContext/tb_LoaiPhong/tb_LoaiPhong_tb_Gia" />
+      <nodes>
+        <classShapeMoniker Id="58109d8c-7d8c-45b7-9fce-22eb0cf71334" />
+        <classShapeMoniker Id="cdeaf0a4-03af-4e64-91cb-ff4cade1a725" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 3.875); (7.25 : 1.92390055338542); (9 : 1.92390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HyggeDbDataContext/tb_PhieuDatPhong/tb_PhieuDatPhong_tb_CTDatPhong" />
+      <nodes>
+        <classShapeMoniker Id="4941810a-6e3e-4ea8-a7c5-1659b263df85" />
+        <classShapeMoniker Id="1839bd87-fef7-4ead-9fcf-9252ddbeec79" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 4.95274983723958); (8.41666666666667 : 4.95274983723958 : JumpStart); (8.58333333333333 : 4.95274983723958 : JumpEnd); (9 : 4.95274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HyggeDbDataContext/tb_PhieuDatPhong/tb_PhieuDatPhong_tb_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="4941810a-6e3e-4ea8-a7c5-1659b263df85" />
+        <classShapeMoniker Id="9d242bcb-b286-45ed-9b5c-598d9725baaa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 8.5); (5.875 : 8.125); (5.875 : 4.95274983723958); (6.25 : 4.95274983723958)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HyggeDbDataContext/tb_KhachHang/tb_KhachHang_tb_PhieuDatPhong" />
+      <nodes>
+        <classShapeMoniker Id="2bd9396e-ebf2-415e-b172-b743dfbfa4ec" />
+        <classShapeMoniker Id="4941810a-6e3e-4ea8-a7c5-1659b263df85" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.35137491861979); (6.25 : 4.35137491861979)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HyggeDbDataContext/tb_NhanVien/tb_NhanVien_tb_PhieuDatPhong" />
+      <nodes>
+        <classShapeMoniker Id="10921a41-6622-424f-85b7-45768fbfb737" />
+        <classShapeMoniker Id="4941810a-6e3e-4ea8-a7c5-1659b263df85" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 14.125); (7.25 : 12.7708968098958); (8.5 : 12.7708968098958); (8.5 : 2.54210283007813); (9 : 2.54210283007813)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HyggeDbDataContext/tb_Phong/tb_Phong_tb_CTDatPhong" />
+      <nodes>
+        <classShapeMoniker Id="99edcff9-61b6-40f6-b7e6-111f6d246927" />
+        <classShapeMoniker Id="1839bd87-fef7-4ead-9fcf-9252ddbeec79" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 14.3565991210937); (5.79166666666667 : 14.3565991210937 : JumpStart); (5.95833333333333 : 14.3565991210937 : JumpEnd); (6.25 : 14.3565991210937)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HyggeDbDataContext/tb_LoaiPhong/tb_LoaiPhong_tb_Phong" />
+      <nodes>
+        <classShapeMoniker Id="58109d8c-7d8c-45b7-9fce-22eb0cf71334" />
+        <classShapeMoniker Id="99edcff9-61b6-40f6-b7e6-111f6d246927" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 15.7315991210938); (5.79166666666667 : 15.7315991210938 : JumpStart); (5.95833333333333 : 15.7315991210938 : JumpEnd); (6.25 : 15.7315991210938)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HyggeDbDataContext/tb_TangLau/tb_TangLau_tb_Phong" />
+      <nodes>
+        <classShapeMoniker Id="4b5de50f-823f-40fd-ab7b-4a8fff1c4003" />
+        <classShapeMoniker Id="99edcff9-61b6-40f6-b7e6-111f6d246927" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 8.60659912109375); (12.75 : 8.60659912109375); (12.75 : 2.70359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HyggeDbDataContext/tb_SanPham/tb_SanPham_tb_CTDatPhong_SanPham" />
+      <nodes>
+        <classShapeMoniker Id="816de0a4-31d0-4406-9eaf-a37328f54b4d" />
+        <classShapeMoniker Id="f89d37c6-739d-44d1-9244-9605cb5f0c5f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 8.56814697265625); (8.41666666666667 : 8.56814697265625 : JumpStart); (8.58333333333333 : 8.56814697265625 : JumpEnd); (9 : 8.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HyggeDbDataContext/tb_NhomSanPham/tb_NhomSanPham_tb_SanPham" />
+      <nodes>
+        <classShapeMoniker Id="e7c58690-586a-4095-abd0-e69238c9a227" />
+        <classShapeMoniker Id="816de0a4-31d0-4406-9eaf-a37328f54b4d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.94314697265625); (3.5 : 4.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HyggeDbDataContext/tb_TaiKhoan/tb_TaiKhoan_tb_NhanVien" />
+      <nodes>
+        <classShapeMoniker Id="ab9dca23-baed-4475-8c67-7f368e5a5b40" />
+        <classShapeMoniker Id="10921a41-6622-424f-85b7-45768fbfb737" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

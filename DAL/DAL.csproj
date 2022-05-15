@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,11 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CTDatPhongDAL.cs" />
+    <Compile Include="CTDatPhong_SanPhamDAL.cs" />
+    <Compile Include="DatPhongDAL.cs" />
+    <Compile Include="GiaDAL.cs" />
+    <Compile Include="HoaDonDAL.cs" />
+    <Compile Include="IdentifyDAL.cs" />
+    <Compile Include="KhachHangDAL.cs" />
+    <Compile Include="NhanVienDAL.cs" />
+    <Compile Include="PhieuDatPhongDAL.cs" />
+    <Compile Include="PhongDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SanPhamDAL.cs" />
+    <Compile Include="TangLauDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{ae12ca7f-3ae3-4b4c-9ec7-673752042327}</Project>
+      <Project>{f00a0528-3c19-4c19-a06f-5cd233ddef76}</Project>
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>

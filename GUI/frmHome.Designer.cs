@@ -32,16 +32,16 @@ namespace GUI
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnNhanPhong = new System.Windows.Forms.Button();
+            this.btnDatPhong = new System.Windows.Forms.Button();
             this.btnKhoiPhuc = new System.Windows.Forms.Button();
             this.btnSoDoPhong = new System.Windows.Forms.Button();
-            this.btnDatPhong = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnTaiKhoan = new System.Windows.Forms.Button();
             this.btnSaoLuu = new System.Windows.Forms.Button();
             this.btnDsNhanPhong = new System.Windows.Forms.Button();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnDsDatPhong = new System.Windows.Forms.Button();
-            this.btnNhanPhong = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -107,140 +107,6 @@ namespace GUI
             this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 498);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // btnKhoiPhuc
-            // 
-            this.btnKhoiPhuc.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnKhoiPhuc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKhoiPhuc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnKhoiPhuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKhoiPhuc.ForeColor = System.Drawing.Color.White;
-            this.btnKhoiPhuc.Location = new System.Drawing.Point(753, 3);
-            this.btnKhoiPhuc.Name = "btnKhoiPhuc";
-            this.tableLayoutPanel1.SetRowSpan(this.btnKhoiPhuc, 2);
-            this.btnKhoiPhuc.Size = new System.Drawing.Size(145, 334);
-            this.btnKhoiPhuc.TabIndex = 17;
-            this.btnKhoiPhuc.Text = "Khôi phục";
-            this.btnKhoiPhuc.UseVisualStyleBackColor = false;
-            // 
-            // btnSoDoPhong
-            // 
-            this.btnSoDoPhong.BackColor = System.Drawing.Color.SeaGreen;
-            this.tableLayoutPanel1.SetColumnSpan(this.btnSoDoPhong, 2);
-            this.btnSoDoPhong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSoDoPhong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSoDoPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSoDoPhong.ForeColor = System.Drawing.Color.White;
-            this.btnSoDoPhong.Location = new System.Drawing.Point(303, 3);
-            this.btnSoDoPhong.Name = "btnSoDoPhong";
-            this.btnSoDoPhong.Size = new System.Drawing.Size(294, 156);
-            this.btnSoDoPhong.TabIndex = 0;
-            this.btnSoDoPhong.Text = "Sơ đồ phòng";
-            this.btnSoDoPhong.UseVisualStyleBackColor = false;
-            // 
-            // btnDatPhong
-            // 
-            this.btnDatPhong.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnDatPhong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDatPhong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatPhong.ForeColor = System.Drawing.Color.White;
-            this.btnDatPhong.Location = new System.Drawing.Point(3, 3);
-            this.btnDatPhong.Name = "btnDatPhong";
-            this.tableLayoutPanel1.SetRowSpan(this.btnDatPhong, 2);
-            this.btnDatPhong.Size = new System.Drawing.Size(144, 334);
-            this.btnDatPhong.TabIndex = 16;
-            this.btnDatPhong.Text = "Đặt phòng";
-            this.btnDatPhong.UseVisualStyleBackColor = false;
-            // 
-            // btnThanhToan
-            // 
-            this.btnThanhToan.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThanhToan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThanhToan.ForeColor = System.Drawing.Color.White;
-            this.btnThanhToan.Location = new System.Drawing.Point(303, 165);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(144, 172);
-            this.btnThanhToan.TabIndex = 9;
-            this.btnThanhToan.Text = "Thanh toán";
-            this.btnThanhToan.UseVisualStyleBackColor = false;
-            // 
-            // btnTaiKhoan
-            // 
-            this.btnTaiKhoan.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnTaiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaiKhoan.ForeColor = System.Drawing.Color.White;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(453, 165);
-            this.btnTaiKhoan.Name = "btnTaiKhoan";
-            this.btnTaiKhoan.Size = new System.Drawing.Size(144, 172);
-            this.btnTaiKhoan.TabIndex = 10;
-            this.btnTaiKhoan.Text = "Tài khoản";
-            this.btnTaiKhoan.UseVisualStyleBackColor = false;
-            // 
-            // btnSaoLuu
-            // 
-            this.btnSaoLuu.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnSaoLuu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaoLuu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSaoLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaoLuu.ForeColor = System.Drawing.Color.White;
-            this.btnSaoLuu.Location = new System.Drawing.Point(603, 3);
-            this.btnSaoLuu.Name = "btnSaoLuu";
-            this.tableLayoutPanel1.SetRowSpan(this.btnSaoLuu, 2);
-            this.btnSaoLuu.Size = new System.Drawing.Size(144, 334);
-            this.btnSaoLuu.TabIndex = 11;
-            this.btnSaoLuu.Text = "Sao lưu";
-            this.btnSaoLuu.UseVisualStyleBackColor = false;
-            this.btnSaoLuu.Click += new System.EventHandler(this.btnSaoLuu_Click);
-            // 
-            // btnDsNhanPhong
-            // 
-            this.btnDsNhanPhong.BackColor = System.Drawing.Color.SeaGreen;
-            this.tableLayoutPanel1.SetColumnSpan(this.btnDsNhanPhong, 2);
-            this.btnDsNhanPhong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDsNhanPhong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDsNhanPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDsNhanPhong.ForeColor = System.Drawing.Color.White;
-            this.btnDsNhanPhong.Location = new System.Drawing.Point(303, 343);
-            this.btnDsNhanPhong.Name = "btnDsNhanPhong";
-            this.btnDsNhanPhong.Size = new System.Drawing.Size(294, 152);
-            this.btnDsNhanPhong.TabIndex = 13;
-            this.btnDsNhanPhong.Text = "Danh sách nhận phòng";
-            this.btnDsNhanPhong.UseVisualStyleBackColor = false;
-            // 
-            // btnDangXuat
-            // 
-            this.btnDangXuat.BackColor = System.Drawing.Color.SeaGreen;
-            this.tableLayoutPanel1.SetColumnSpan(this.btnDangXuat, 2);
-            this.btnDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.Location = new System.Drawing.Point(603, 343);
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(295, 152);
-            this.btnDangXuat.TabIndex = 14;
-            this.btnDangXuat.Text = "Đăng xuất";
-            this.btnDangXuat.UseVisualStyleBackColor = false;
-            // 
-            // btnDsDatPhong
-            // 
-            this.btnDsDatPhong.BackColor = System.Drawing.Color.SeaGreen;
-            this.tableLayoutPanel1.SetColumnSpan(this.btnDsDatPhong, 2);
-            this.btnDsDatPhong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDsDatPhong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDsDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDsDatPhong.ForeColor = System.Drawing.Color.White;
-            this.btnDsDatPhong.Location = new System.Drawing.Point(3, 343);
-            this.btnDsDatPhong.Name = "btnDsDatPhong";
-            this.btnDsDatPhong.Size = new System.Drawing.Size(294, 152);
-            this.btnDsDatPhong.TabIndex = 12;
-            this.btnDsDatPhong.Text = "Danh sách đặt phòng";
-            this.btnDsDatPhong.UseVisualStyleBackColor = false;
-            // 
             // btnNhanPhong
             // 
             this.btnNhanPhong.BackColor = System.Drawing.Color.SeaGreen;
@@ -256,6 +122,149 @@ namespace GUI
             this.btnNhanPhong.Text = "Nhận phòng";
             this.btnNhanPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNhanPhong.UseVisualStyleBackColor = false;
+            this.btnNhanPhong.Click += new System.EventHandler(this.BtnNhanPhong_Click);
+            // 
+            // btnDatPhong
+            // 
+            this.btnDatPhong.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnDatPhong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDatPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDatPhong.ForeColor = System.Drawing.Color.White;
+            this.btnDatPhong.Location = new System.Drawing.Point(3, 3);
+            this.btnDatPhong.Name = "btnDatPhong";
+            this.tableLayoutPanel1.SetRowSpan(this.btnDatPhong, 2);
+            this.btnDatPhong.Size = new System.Drawing.Size(144, 334);
+            this.btnDatPhong.TabIndex = 16;
+            this.btnDatPhong.Text = "Đặt phòng";
+            this.btnDatPhong.UseVisualStyleBackColor = false;
+            this.btnDatPhong.Click += new System.EventHandler(this.BtnDatPhong_Click);
+            // 
+            // btnKhoiPhuc
+            // 
+            this.btnKhoiPhuc.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnKhoiPhuc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKhoiPhuc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnKhoiPhuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKhoiPhuc.ForeColor = System.Drawing.Color.White;
+            this.btnKhoiPhuc.Location = new System.Drawing.Point(753, 3);
+            this.btnKhoiPhuc.Name = "btnKhoiPhuc";
+            this.tableLayoutPanel1.SetRowSpan(this.btnKhoiPhuc, 2);
+            this.btnKhoiPhuc.Size = new System.Drawing.Size(145, 334);
+            this.btnKhoiPhuc.TabIndex = 17;
+            this.btnKhoiPhuc.Text = "Khôi phục";
+            this.btnKhoiPhuc.UseVisualStyleBackColor = false;
+            this.btnKhoiPhuc.Click += new System.EventHandler(this.BtnKhoiPhuc_Click);
+            // 
+            // btnSoDoPhong
+            // 
+            this.btnSoDoPhong.BackColor = System.Drawing.Color.SeaGreen;
+            this.tableLayoutPanel1.SetColumnSpan(this.btnSoDoPhong, 2);
+            this.btnSoDoPhong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSoDoPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSoDoPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSoDoPhong.ForeColor = System.Drawing.Color.White;
+            this.btnSoDoPhong.Location = new System.Drawing.Point(303, 3);
+            this.btnSoDoPhong.Name = "btnSoDoPhong";
+            this.btnSoDoPhong.Size = new System.Drawing.Size(294, 156);
+            this.btnSoDoPhong.TabIndex = 0;
+            this.btnSoDoPhong.Text = "Sơ đồ phòng";
+            this.btnSoDoPhong.UseVisualStyleBackColor = false;
+            this.btnSoDoPhong.Click += new System.EventHandler(this.BtnSoDoPhong_Click);
+            // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThanhToan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThanhToan.ForeColor = System.Drawing.Color.White;
+            this.btnThanhToan.Location = new System.Drawing.Point(303, 165);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(144, 172);
+            this.btnThanhToan.TabIndex = 9;
+            this.btnThanhToan.Text = "Thanh toán";
+            this.btnThanhToan.UseVisualStyleBackColor = false;
+            this.btnThanhToan.Click += new System.EventHandler(this.BtnThanhToan_Click);
+            // 
+            // btnTaiKhoan
+            // 
+            this.btnTaiKhoan.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnTaiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaiKhoan.ForeColor = System.Drawing.Color.White;
+            this.btnTaiKhoan.Location = new System.Drawing.Point(453, 165);
+            this.btnTaiKhoan.Name = "btnTaiKhoan";
+            this.btnTaiKhoan.Size = new System.Drawing.Size(144, 172);
+            this.btnTaiKhoan.TabIndex = 10;
+            this.btnTaiKhoan.Text = "Tài khoản";
+            this.btnTaiKhoan.UseVisualStyleBackColor = false;
+            this.btnTaiKhoan.Click += new System.EventHandler(this.BtnTaiKhoan_Click);
+            // 
+            // btnSaoLuu
+            // 
+            this.btnSaoLuu.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSaoLuu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaoLuu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSaoLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaoLuu.ForeColor = System.Drawing.Color.White;
+            this.btnSaoLuu.Location = new System.Drawing.Point(603, 3);
+            this.btnSaoLuu.Name = "btnSaoLuu";
+            this.tableLayoutPanel1.SetRowSpan(this.btnSaoLuu, 2);
+            this.btnSaoLuu.Size = new System.Drawing.Size(144, 334);
+            this.btnSaoLuu.TabIndex = 11;
+            this.btnSaoLuu.Text = "Sao lưu";
+            this.btnSaoLuu.UseVisualStyleBackColor = false;
+            this.btnSaoLuu.Click += new System.EventHandler(this.BtnSaoLuu_Click);
+            // 
+            // btnDsNhanPhong
+            // 
+            this.btnDsNhanPhong.BackColor = System.Drawing.Color.SeaGreen;
+            this.tableLayoutPanel1.SetColumnSpan(this.btnDsNhanPhong, 2);
+            this.btnDsNhanPhong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDsNhanPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDsNhanPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDsNhanPhong.ForeColor = System.Drawing.Color.White;
+            this.btnDsNhanPhong.Location = new System.Drawing.Point(303, 343);
+            this.btnDsNhanPhong.Name = "btnDsNhanPhong";
+            this.btnDsNhanPhong.Size = new System.Drawing.Size(294, 152);
+            this.btnDsNhanPhong.TabIndex = 13;
+            this.btnDsNhanPhong.Text = "Danh sách nhận phòng";
+            this.btnDsNhanPhong.UseVisualStyleBackColor = false;
+            this.btnDsNhanPhong.Click += new System.EventHandler(this.BtnDsNhanPhong_Click);
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.BackColor = System.Drawing.Color.SeaGreen;
+            this.tableLayoutPanel1.SetColumnSpan(this.btnDangXuat, 2);
+            this.btnDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.Location = new System.Drawing.Point(603, 343);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(295, 152);
+            this.btnDangXuat.TabIndex = 14;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnDangXuat.Click += new System.EventHandler(this.BtnDangXuat_Click);
+            // 
+            // btnDsDatPhong
+            // 
+            this.btnDsDatPhong.BackColor = System.Drawing.Color.SeaGreen;
+            this.tableLayoutPanel1.SetColumnSpan(this.btnDsDatPhong, 2);
+            this.btnDsDatPhong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDsDatPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDsDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDsDatPhong.ForeColor = System.Drawing.Color.White;
+            this.btnDsDatPhong.Location = new System.Drawing.Point(3, 343);
+            this.btnDsDatPhong.Name = "btnDsDatPhong";
+            this.btnDsDatPhong.Size = new System.Drawing.Size(294, 152);
+            this.btnDsDatPhong.TabIndex = 12;
+            this.btnDsDatPhong.Text = "Danh sách đặt phòng";
+            this.btnDsDatPhong.UseVisualStyleBackColor = false;
+            this.btnDsDatPhong.Click += new System.EventHandler(this.BtnDsDatPhong_Click);
             // 
             // button10
             // 
@@ -364,7 +373,7 @@ namespace GUI
             // frmHome
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1059, 648);
             this.Controls.Add(this.panel1);
