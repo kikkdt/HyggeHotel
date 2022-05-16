@@ -62,9 +62,13 @@
     <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2.Core, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2.Core.Desktop, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,6 +79,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fmChonThemPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmChonThemPhong.Designer.cs">
+      <DependentUpon>fmChonThemPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmCTPhongCoKhach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmCTPhongCoKhach.Designer.cs">
+      <DependentUpon>fmCTPhongCoKhach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmCTPhongTrong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmCTPhongTrong.Designer.cs">
+      <DependentUpon>fmCTPhongTrong.cs</DependentUpon>
+    </Compile>
     <Compile Include="fmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,12 +127,6 @@
     <Compile Include="fmDsDatPhong.Designer.cs">
       <DependentUpon>fmDsDatPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="fmNhanPhong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fmNhanPhong.Designer.cs">
-      <DependentUpon>fmNhanPhong.cs</DependentUpon>
-    </Compile>
     <Compile Include="fmSoDoPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,11 +139,23 @@
     <Compile Include="fmThanhToan.Designer.cs">
       <DependentUpon>fmThanhToan.cs</DependentUpon>
     </Compile>
+    <Compile Include="fmThemDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmThemDichVu.Designer.cs">
+      <DependentUpon>fmThemDichVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmNhanPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmNhanPhong.Designer.cs">
+      <DependentUpon>fmNhanPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -135,16 +163,35 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Phong.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tang.cs" />
-    <Compile Include="UserControls\ucPhong.cs">
+    <Compile Include="UserControls\UcSanPhamDichVu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ucPhong.Designer.cs">
-      <DependentUpon>ucPhong.cs</DependentUpon>
+    <Compile Include="UserControls\UcSanPhamDichVu.Designer.cs">
+      <DependentUpon>UcSanPhamDichVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UcPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcPhong.Designer.cs">
+      <DependentUpon>UcPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcTangLau.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcTangLau.Designer.cs">
+      <DependentUpon>UcTangLau.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fmChonThemPhong.resx">
+      <DependentUpon>fmChonThemPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmCTPhongCoKhach.resx">
+      <DependentUpon>fmCTPhongCoKhach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmCTPhongTrong.resx">
+      <DependentUpon>fmCTPhongTrong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fmDoiMatKhau.resx">
       <DependentUpon>fmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +216,9 @@
     <EmbeddedResource Include="fmThanhToan.resx">
       <DependentUpon>fmThanhToan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fmThemDichVu.resx">
+      <DependentUpon>fmThemDichVu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,8 +236,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserControls\ucPhong.resx">
-      <DependentUpon>ucPhong.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UcSanPhamDichVu.resx">
+      <DependentUpon>UcSanPhamDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcPhong.resx">
+      <DependentUpon>UcPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcTangLau.resx">
+      <DependentUpon>UcTangLau.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
@@ -218,9 +274,18 @@
       <Name>BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{ae12ca7f-3ae3-4b4c-9ec7-673752042327}</Project>
+      <Project>{f00a0528-3c19-4c19-a06f-5cd233ddef76}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon\icons8_calendar_plus_64px.png" />
+    <Content Include="icon\icons8_corridor_45px.png" />
+    <Content Include="icon\icons8_home_32px_1.png" />
+    <Content Include="icon\icons8_key_64px.png" />
+    <Content Include="icon\icons8_room_32px_1.png" />
+    <Content Include="icon\icons8_room_32px_2.png" />
+    <Content Include="icon\icons8_room_64px_1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

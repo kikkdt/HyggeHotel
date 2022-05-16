@@ -47,7 +47,7 @@ namespace GUI
             this.btnDanhSachDatPhong = new DevExpress.XtraBars.BarButtonItem();
             this.btnDSNhanPhong = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnSoDoPhong = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangnhap = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
@@ -59,6 +59,8 @@ namespace GUI
             this.btnDsDatPhong = new DevExpress.XtraBars.BarButtonItem();
             this.btnDsNhanP = new DevExpress.XtraBars.BarButtonItem();
             this.btnThanhToan = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnDsDatPhong = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnDatPhong = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -70,14 +72,15 @@ namespace GUI
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pnContent = new DevExpress.XtraEditors.PanelControl();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pnContent)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -100,7 +103,7 @@ namespace GUI
             this.btnDanhSachDatPhong,
             this.btnDSNhanPhong,
             this.barSubItem1,
-            this.barButtonItem4,
+            this.barBtnSoDoPhong,
             this.btnDangnhap,
             this.barButtonItem6,
             this.barButtonItem7,
@@ -111,10 +114,12 @@ namespace GUI
             this.S,
             this.btnDsDatPhong,
             this.btnDsNhanP,
-            this.btnThanhToan});
+            this.btnThanhToan,
+            this.barBtnDsDatPhong,
+            this.barBtnDatPhong});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.ribbonControl.MaxItemId = 66;
+            this.ribbonControl.MaxItemId = 69;
             this.ribbonControl.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.OptionsMenuMinWidth = 605;
@@ -204,7 +209,6 @@ namespace GUI
             this.btnSoDoPhong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSoDoPhong.ImageOptions.Image")));
             this.btnSoDoPhong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSoDoPhong.ImageOptions.LargeImage")));
             this.btnSoDoPhong.Name = "btnSoDoPhong";
-            this.btnSoDoPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSoDoPhong_ItemClick);
             // 
             // btnDanhSachDatPhong
             // 
@@ -228,14 +232,15 @@ namespace GUI
             this.barSubItem1.Id = 52;
             this.barSubItem1.Name = "barSubItem1";
             // 
-            // barButtonItem4
+            // barBtnSoDoPhong
             // 
-            this.barButtonItem4.Caption = "Home";
-            this.barButtonItem4.Id = 53;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            this.barBtnSoDoPhong.Caption = "Sơ đồ phòng";
+            this.barBtnSoDoPhong.Hint = "Sơ đồ phòng";
+            this.barBtnSoDoPhong.Id = 53;
+            this.barBtnSoDoPhong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnSoDoPhong.ImageOptions.SvgImage")));
+            this.barBtnSoDoPhong.Name = "barBtnSoDoPhong";
+            this.barBtnSoDoPhong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnSoDoPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarBtnSoDoPhong_ItemClick);
             // 
             // btnDangnhap
             // 
@@ -245,7 +250,6 @@ namespace GUI
             this.btnDangnhap.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDangnhap.ImageOptions.LargeImage")));
             this.btnDangnhap.Name = "btnDangnhap";
             this.btnDangnhap.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
-            this.btnDangnhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangnhap_ItemClick);
             // 
             // barButtonItem6
             // 
@@ -255,7 +259,6 @@ namespace GUI
             this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
             this.barButtonItem6.Name = "barButtonItem6";
             this.barButtonItem6.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
-            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
             // barButtonItem7
             // 
@@ -286,7 +289,6 @@ namespace GUI
             this.btnDatPhong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDatPhong.ImageOptions.LargeImage")));
             this.btnDatPhong.Name = "btnDatPhong";
             this.btnDatPhong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
-            this.btnDatPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDatPhong_ItemClick);
             // 
             // barButtonItem11
             // 
@@ -296,7 +298,6 @@ namespace GUI
             this.barButtonItem11.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
             this.barButtonItem11.Name = "barButtonItem11";
             this.barButtonItem11.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
-            this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
             // 
             // S
             // 
@@ -306,7 +307,6 @@ namespace GUI
             this.S.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("S.ImageOptions.LargeImage")));
             this.S.Name = "S";
             this.S.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
-            this.S.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.S_ItemClick);
             // 
             // btnDsDatPhong
             // 
@@ -316,7 +316,6 @@ namespace GUI
             this.btnDsDatPhong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDsDatPhong.ImageOptions.LargeImage")));
             this.btnDsDatPhong.Name = "btnDsDatPhong";
             this.btnDsDatPhong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
-            this.btnDsDatPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
             // 
             // btnDsNhanP
             // 
@@ -326,14 +325,31 @@ namespace GUI
             this.btnDsNhanP.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDsNhanP.ImageOptions.LargeImage")));
             this.btnDsNhanP.Name = "btnDsNhanP";
             this.btnDsNhanP.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
-            this.btnDsNhanP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDsNhanP_ItemClick);
             // 
             // btnThanhToan
             // 
             this.btnThanhToan.Caption = "Thanh toán";
             this.btnThanhToan.Id = 65;
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThanhToan_ItemClick);
+            // 
+            // barBtnDsDatPhong
+            // 
+            this.barBtnDsDatPhong.Caption = "Danh sách đặt phòng";
+            this.barBtnDsDatPhong.Hint = "Danh sách đặt phòng";
+            this.barBtnDsDatPhong.Id = 66;
+            this.barBtnDsDatPhong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnDsDatPhong.ImageOptions.SvgImage")));
+            this.barBtnDsDatPhong.Name = "barBtnDsDatPhong";
+            this.barBtnDsDatPhong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barBtnDatPhong
+            // 
+            this.barBtnDatPhong.Caption = "Đặt phòng";
+            this.barBtnDatPhong.Hint = "Đặt phòng";
+            this.barBtnDatPhong.Id = 68;
+            this.barBtnDatPhong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnDatPhong.ImageOptions.SvgImage")));
+            this.barBtnDatPhong.Name = "barBtnDatPhong";
+            this.barBtnDatPhong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnDatPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarBtnDatPhong_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -344,7 +360,9 @@ namespace GUI
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barBtnSoDoPhong);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barBtnDatPhong);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barBtnDsDatPhong);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Home";
             // 
@@ -411,26 +429,48 @@ namespace GUI
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "ribbonPage3";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pnContent);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 193);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1351, 525);
-            this.panel2.TabIndex = 5;
-            // 
-            // pnContent
-            // 
-            this.pnContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContent.Location = new System.Drawing.Point(0, 0);
-            this.pnContent.Name = "pnContent";
-            this.pnContent.Size = new System.Drawing.Size(1351, 525);
-            this.pnContent.TabIndex = 1;
-            // 
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Danh sách đặt phòng";
+            this.barButtonItem5.Id = 66;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "Danh sách đặt phòng";
+            this.barButtonItem10.Id = 66;
+            this.barButtonItem10.Name = "barButtonItem10";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Danh sách đặt phòng";
+            this.barButtonItem4.Hint = "Danh sách đặt phòng";
+            this.barButtonItem4.Id = 66;
+            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem12
+            // 
+            this.barButtonItem12.Caption = "Danh sách đặt phòng";
+            this.barButtonItem12.Hint = "Danh sách đặt phòng";
+            this.barButtonItem12.Id = 66;
+            this.barButtonItem12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem12.ImageOptions.SvgImage")));
+            this.barButtonItem12.Name = "barButtonItem12";
+            this.barButtonItem12.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem13
+            // 
+            this.barButtonItem13.Caption = "Danh sách đặt phòng";
+            this.barButtonItem13.Hint = "Danh sách đặt phòng";
+            this.barButtonItem13.Id = 66;
+            this.barButtonItem13.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem13.ImageOptions.SvgImage")));
+            this.barButtonItem13.Name = "barButtonItem13";
+            this.barButtonItem13.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // Main
             // 
@@ -438,9 +478,9 @@ namespace GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1351, 718);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.ribbonControl);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "Main";
             this.Ribbon = this.ribbonControl;
@@ -451,8 +491,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pnContent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,9 +518,6 @@ namespace GUI
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
-        private System.Windows.Forms.Panel panel2;
-        private DevExpress.XtraEditors.PanelControl pnContent;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem btnDangnhap;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
@@ -501,5 +536,13 @@ namespace GUI
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem btnThanhToan;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.BarButtonItem barBtnDsDatPhong;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarButtonItem barBtnDatPhong;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
+        public DevExpress.XtraBars.BarButtonItem barBtnSoDoPhong;
     }
 }

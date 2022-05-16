@@ -7,27 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 
 namespace GUI
 {
-    public partial class ucPhong : UserControl
+    public partial class UcPhong : UserControl
     {
-        public ucPhong()
+        tb_Phong _phong;
+
+        public tb_Phong Phong { get => _phong; set => _phong = value; }
+
+        public UcPhong(tb_Phong phong)
         {
             InitializeComponent();
+            Phong = phong;
+
+            LoadUI();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void LoadUI()
         {
-
+            btnPhong.Text = $"{Phong.TenPhong}\n{Phong.tb_LoaiPhong.TenLoaiPhong}\nSố người: {Phong.tb_LoaiPhong.SoLuongNguoiLon}";
+            if (Phong.TrangThai.Equals("Đang có khách"))
+                btnPhong.Appearance.BackColor = Color.Red;
+            else if (Phong.TrangThai.Equals("Chưa dọn"))
+                btnPhong.Appearance.BackColor = Color.Gray;
+            else // Phòng trống
+                btnPhong.Appearance.BackColor = Color.Green;
         }
 
-        private void ucPhong_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("dqwdqwd");
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void UcPhong_Load(object sender, EventArgs e)
         {
 
         }

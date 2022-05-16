@@ -13,18 +13,20 @@ namespace GUI
 {
     public partial class fmDangNhap : DevExpress.XtraEditors.XtraForm
     {
+        public static Main mainForm;
         public fmDangNhap()
         {
             InitializeComponent();
         }
 
-        private void btnDangNhap_Click(object sender, EventArgs e)
-        { 
-            new Main().Show();
-            this.Visible = false;
+        private void BtnDangNhap_Click(object sender, EventArgs e)
+        {
+            mainForm = new Main();
+            mainForm.Show();
+            Hide();
         }
 
-        private void fmDangNhap_Load(object sender, EventArgs e)
+        private void FmDangNhap_Load(object sender, EventArgs e)
         {
 
         }
