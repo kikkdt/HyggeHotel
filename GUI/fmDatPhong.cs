@@ -411,5 +411,10 @@ namespace GUI
             tabNavigationPage2.Controls.Add(ucSanPhamDichVu);
         }
         #endregion
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

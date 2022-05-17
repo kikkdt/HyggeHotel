@@ -14,5 +14,11 @@ namespace BLL
         {
             new CTDatPhong_SanPhamDAL().Update(ctDatPhongs);
         }
+
+
+        public static List<tb_CTDatPhong_SanPham> GetCTDatPhong_SanPham(int maCTDatPhong)
+        {
+            return new CTDatPhong_SanPhamDAL().GetCTDatPhong_SanPham(maCTDatPhong);
+        }
     }
 }

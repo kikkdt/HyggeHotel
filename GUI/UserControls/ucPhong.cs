@@ -40,5 +40,10 @@ namespace GUI
         {
 
         }
+
+        private void btnPhong_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

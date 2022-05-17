@@ -70,7 +70,11 @@ namespace GUI.UserControls
                           fmCTPhongCoKhach fmCTPhongCoKhach = new fmCTPhongCoKhach(phong);
                           fmCTPhongCoKhach.ShowDialog();
                       }
-
+                      else if (phong.TrangThai.Equals("Chưa dọn"))
+                      {
+                          fmDonPhong fmDonPhong = new fmDonPhong(phong.MaPhong);
+                          fmDonPhong.ShowDialog();
+                      }
                   };
                 pnlContainerPhong.Controls.Add(uc);
             }
@@ -108,6 +112,16 @@ namespace GUI.UserControls
                 };
                 pnlContainerPhong.Controls.Add(uc);
             }
+        }
+
+        private void pnlContainerPhong_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTang_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

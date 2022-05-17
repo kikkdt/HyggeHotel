@@ -36,10 +36,10 @@ namespace GUI
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@ namespace GUI
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(31, 30, 31, 30);
+            this.panel1.Padding = new System.Windows.Forms.Padding(15);
             this.panel1.Size = new System.Drawing.Size(726, 369);
             this.panel1.TabIndex = 0;
             // 
@@ -72,12 +72,12 @@ namespace GUI
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(31, 30);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 15);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(664, 309);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(696, 339);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel2
@@ -87,10 +87,10 @@ namespace GUI
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(222, 4);
+            this.panel2.Location = new System.Drawing.Point(232, 4);
             this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(437, 301);
+            this.panel2.Size = new System.Drawing.Size(459, 331);
             this.panel2.TabIndex = 0;
             // 
             // panel6
@@ -100,20 +100,21 @@ namespace GUI
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 226);
             this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(10);
-            this.panel6.Size = new System.Drawing.Size(437, 72);
+            this.panel6.Padding = new System.Windows.Forms.Padding(10, 10, 20, 10);
+            this.panel6.Size = new System.Drawing.Size(459, 72);
             this.panel6.TabIndex = 4;
             // 
             // btnThoat
             // 
             this.btnThoat.AutoSize = true;
             this.btnThoat.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnThoat.Location = new System.Drawing.Point(300, 10);
+            this.btnThoat.Location = new System.Drawing.Point(312, 10);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(127, 52);
             this.btnThoat.TabIndex = 1;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnDangNhap
             // 
@@ -129,25 +130,27 @@ namespace GUI
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.textBox2);
+            this.panel4.Controls.Add(this.txtPassword);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 139);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(10);
-            this.panel4.Size = new System.Drawing.Size(437, 87);
+            this.panel4.Padding = new System.Windows.Forms.Padding(10, 10, 20, 10);
+            this.panel4.Size = new System.Drawing.Size(459, 87);
             this.panel4.TabIndex = 2;
             // 
-            // textBox2
+            // txtPassword
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(10, 45);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(417, 32);
-            this.textBox2.TabIndex = 1;
+            this.txtPassword.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(10, 45);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(429, 32);
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // label3
             // 
@@ -157,31 +160,32 @@ namespace GUI
             this.label3.Location = new System.Drawing.Point(10, 10);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 22);
+            this.label3.Size = new System.Drawing.Size(95, 23);
             this.label3.TabIndex = 0;
             this.label3.Text = "Mật khẩu:";
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.txtUsername);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 52);
             this.panel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.panel3.Size = new System.Drawing.Size(437, 87);
+            this.panel3.Padding = new System.Windows.Forms.Padding(10, 10, 20, 10);
+            this.panel3.Size = new System.Drawing.Size(459, 87);
             this.panel3.TabIndex = 1;
             // 
-            // textBox1
+            // txtUsername
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(10, 45);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(417, 32);
-            this.textBox1.TabIndex = 1;
+            this.txtUsername.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(10, 45);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(429, 32);
+            this.txtUsername.TabIndex = 1;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // label2
             // 
@@ -191,7 +195,7 @@ namespace GUI
             this.label2.Location = new System.Drawing.Point(10, 10);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 22);
+            this.label2.Size = new System.Drawing.Size(147, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên đăng nhập:";
             // 
@@ -201,7 +205,7 @@ namespace GUI
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(437, 52);
+            this.panel5.Size = new System.Drawing.Size(459, 52);
             this.panel5.TabIndex = 3;
             // 
             // label1
@@ -209,7 +213,7 @@ namespace GUI
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(126, 6);
+            this.label1.Location = new System.Drawing.Point(137, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 40);
@@ -221,7 +225,7 @@ namespace GUI
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(3, 3);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(211, 303);
+            this.panel7.Size = new System.Drawing.Size(221, 333);
             this.panel7.TabIndex = 1;
             // 
             // fmDangNhap
@@ -262,10 +266,10 @@ namespace GUI
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;

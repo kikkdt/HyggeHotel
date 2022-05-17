@@ -48,8 +48,9 @@ namespace GUI
             this.btnPhong.Size = new System.Drawing.Size(180, 165);
             this.btnPhong.TabIndex = 0;
             this.btnPhong.Text = "simpleButton1";
+            this.btnPhong.Click += new System.EventHandler(this.btnPhong_Click);
             // 
-            // ucPhong
+            // UcPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -58,7 +59,7 @@ namespace GUI
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "ucPhong";
+            this.Name = "UcPhong";
             this.Size = new System.Drawing.Size(180, 165);
             this.Load += new System.EventHandler(this.UcPhong_Load);
             this.ResumeLayout(false);

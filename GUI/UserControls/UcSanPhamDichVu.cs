@@ -114,5 +114,10 @@ namespace GUI
                 DgvCTDatPhong_SelectionChanged(null, null);
             }
         }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

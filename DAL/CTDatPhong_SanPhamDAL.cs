@@ -30,9 +30,9 @@ namespace DAL
             dataContext.SubmitChanges();
         }
 
-        public tb_CTDatPhong_SanPham GetCTDatPhong_SanPham(int maCTDatPhong, string maSanPham)
+        public List<tb_CTDatPhong_SanPham> GetCTDatPhong_SanPham(int maCTDatPhong)
         {
-            return dataContext.tb_CTDatPhong_SanPhams.FirstOrDefault(x => x.MaCTDatPhong.Equals(maCTDatPhong) && x.MaSanPham.Equals(maSanPham));
+            return dataContext.tb_CTDatPhong_SanPhams.Where(x => x.MaCTDatPhong.Equals(maCTDatPhong)).ToList();
         }
     }
 }
