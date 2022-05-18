@@ -15,13 +15,15 @@ namespace GUI
 {
     public partial class Main : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private static tb_NhanVien _nhanVien = NhanVienBLL.GetEmployee("admin");
-
+        private static tb_NhanVien _nhanVien;
+        private String username;
         public static tb_NhanVien NhanVien { get => _nhanVien; set => _nhanVien = value; }
 
-        public Main()
+        public Main(String username)
         {
+            this.username = username;
             InitializeComponent();
+            _nhanVien = NhanVienBLL.GetEmployee(username);
         }
 
         private void Main_Load(object sender, EventArgs e)

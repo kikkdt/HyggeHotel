@@ -35,5 +35,10 @@ namespace GUI
             string maPhieuDatPhong = _ctDatPhongs[0].MaPhieuDat;
             HoaDonBLL.UpdateTotalAmount(maPhieuDatPhong);
         }
+
+        private void fmThemDichVu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

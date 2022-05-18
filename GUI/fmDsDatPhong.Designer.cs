@@ -225,7 +225,7 @@ namespace GUI
             // 
             this.textBox1.Location = new System.Drawing.Point(505, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 27);
+            this.textBox1.Size = new System.Drawing.Size(190, 32);
             this.textBox1.TabIndex = 1;
             // 
             // comboBox1
@@ -233,7 +233,7 @@ namespace GUI
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(295, 3);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(204, 27);
+            this.comboBox1.Size = new System.Drawing.Size(204, 32);
             this.comboBox1.TabIndex = 0;
             // 
             // dateTimePicker1
@@ -272,7 +272,7 @@ namespace GUI
             // 
             // fmDsDatPhong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 675);
             this.Controls.Add(this.panel2);

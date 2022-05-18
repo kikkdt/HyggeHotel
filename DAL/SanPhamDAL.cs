@@ -29,5 +29,6 @@ namespace DAL
         {
             return dataContext.tb_SanPhams.FirstOrDefault(sp => sp.MaSanPham.Equals(maSanPham));
         }
+        
     }
 }

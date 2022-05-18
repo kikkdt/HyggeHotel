@@ -64,5 +64,12 @@ namespace GUI
             fmThemDichVu.ShowDialog();
             Close();
         }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        { 
+            fmThanhToan fmThanhToan = new fmThanhToan(_ctDatPhong);
+            Close();
+            fmThanhToan.ShowDialog();
+        }
     }
 }

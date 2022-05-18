@@ -104,6 +104,7 @@
             this.Name = "fmThemDichVu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm dịch vụ";
+            this.Load += new System.EventHandler(this.fmThemDichVu_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

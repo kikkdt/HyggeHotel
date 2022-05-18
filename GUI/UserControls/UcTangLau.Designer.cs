@@ -47,7 +47,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 215);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 205);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblTang
@@ -57,10 +57,11 @@
             this.lblTang.Location = new System.Drawing.Point(4, 0);
             this.lblTang.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTang.Name = "lblTang";
-            this.lblTang.Size = new System.Drawing.Size(198, 215);
+            this.lblTang.Size = new System.Drawing.Size(198, 205);
             this.lblTang.TabIndex = 0;
             this.lblTang.Text = "Tầng";
             this.lblTang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTang.Click += new System.EventHandler(this.lblTang_Click);
             // 
             // pnlContainerPhong
             // 
@@ -68,11 +69,12 @@
             this.pnlContainerPhong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainerPhong.Location = new System.Drawing.Point(209, 3);
             this.pnlContainerPhong.Name = "pnlContainerPhong";
-            this.pnlContainerPhong.Size = new System.Drawing.Size(788, 209);
+            this.pnlContainerPhong.Size = new System.Drawing.Size(788, 199);
             this.pnlContainerPhong.TabIndex = 1;
             this.pnlContainerPhong.WrapContents = false;
+            this.pnlContainerPhong.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContainerPhong_Paint);
             // 
-            // ucTangLau
+            // UcTangLau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,8 +82,8 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "ucTangLau";
-            this.Size = new System.Drawing.Size(1000, 215);
+            this.Name = "UcTangLau";
+            this.Size = new System.Drawing.Size(1000, 205);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

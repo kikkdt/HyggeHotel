@@ -28,5 +28,7 @@ namespace BLL
         {
             return new SanPhamDAL().GetProducts(maSanPham);
         }
+       
+
     }
 }
