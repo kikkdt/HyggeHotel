@@ -8,13 +8,3 @@ D:\Projects\3. Do an HK6\Software testing\HyggeHotel\DAL\obj\Debug\DAL.csproj.Co
 D:\Projects\3. Do an HK6\Software testing\HyggeHotel\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\Projects\3. Do an HK6\Software testing\HyggeHotel\DAL\obj\Debug\DAL.dll
 D:\Projects\3. Do an HK6\Software testing\HyggeHotel\DAL\obj\Debug\DAL.pdb
-D:\Projects\3. Do an HK6\HyggeHotel\DAL\bin\Debug\DAL.dll
-D:\Projects\3. Do an HK6\HyggeHotel\DAL\bin\Debug\DAL.pdb
-D:\Projects\3. Do an HK6\HyggeHotel\DAL\bin\Debug\DTO.dll
-D:\Projects\3. Do an HK6\HyggeHotel\DAL\bin\Debug\DTO.pdb
-D:\Projects\3. Do an HK6\HyggeHotel\DAL\bin\Debug\DTO.dll.config
-D:\Projects\3. Do an HK6\HyggeHotel\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
-D:\Projects\3. Do an HK6\HyggeHotel\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-D:\Projects\3. Do an HK6\HyggeHotel\DAL\obj\Debug\DAL.csproj.CopyComplete
-D:\Projects\3. Do an HK6\HyggeHotel\DAL\obj\Debug\DAL.dll
-D:\Projects\3. Do an HK6\HyggeHotel\DAL\obj\Debug\DAL.pdb
