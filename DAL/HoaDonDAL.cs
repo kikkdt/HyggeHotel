@@ -48,5 +48,11 @@ namespace DAL
             hoaDonCu.TrangThai = hoaDonMoi.TrangThai;
             dataContext.SubmitChanges();
         }
+        public void UpdateStatus(string maHD,bool status)
+        {
+            var hoaDonCu = dataContext.tb_HoaDons.Where(x => x.MaHD.Equals(maHD)).FirstOrDefault();
+            hoaDonCu.TrangThai = status;
+            dataContext.SubmitChanges();
+        }
     }
 }

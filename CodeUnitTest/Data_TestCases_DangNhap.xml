@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestDatas>
+	<Addition>
+		<Username>admin</Username>
+		<Password>123</Password>
+	</Addition>
+  <Addition>
+    <Username>admin1</Username>
+    <Password>123</Password>
+  </Addition>
+</TestDatas>

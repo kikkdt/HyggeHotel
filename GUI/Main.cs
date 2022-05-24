@@ -58,7 +58,5 @@ namespace GUI
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Show();
         }
-
-
     }
 }

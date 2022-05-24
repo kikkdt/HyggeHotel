@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbQLKS" Class="HyggeDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=HUNGTRAN\HUNGTRAN;Initial Catalog=dbQLKS;Integrated Security=True" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="dbQLKSConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=NEMO;Initial Catalog=dbQLKS;Integrated Security=True" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="dbQLKSConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tb_CTDatPhong" Member="tb_CTDatPhongs">
     <Type Name="tb_CTDatPhong">
       <Column Name="MaCTDatPhong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestDatas>
+  <Addition>
+    <GiamTru>50000</GiamTru>
+    <Result>Thanh toán thành công.</Result>
+  </Addition>
+  <Addition>
+    <GiamTru>65000</GiamTru>
+    <Result>Thanh toán thành công.</Result>
+  </Addition>
+  <Addition>
+    <GiamTru>105000</GiamTru>
+    <Result>Thanh toán thành công.</Result>
+  </Addition>
+  <Addition>
+    <GiamTru>0</GiamTru>
+    <Result>Thanh toán thành công.</Result>
+  </Addition>
+</TestDatas>

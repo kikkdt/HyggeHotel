@@ -61,11 +61,14 @@ namespace GUI
             this.txtSoTienPhaiThanhToan = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.txtGiamTru = new System.Windows.Forms.Label();
+            this.nudGiamTru = new System.Windows.Forms.NumericUpDown();
             this.label26 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.txtTongTien = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.txtTraTruoc = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.txtMaHoaDon = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -92,6 +95,8 @@ namespace GUI
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnInHoaDon = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.lbResult = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -105,7 +110,9 @@ namespace GUI
             this.groupBox2.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGiamTru)).BeginInit();
             this.panel12.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.panel11.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -115,6 +122,7 @@ namespace GUI
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel18.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -395,9 +403,11 @@ namespace GUI
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.panel18);
             this.groupBox2.Controls.Add(this.panel14);
             this.groupBox2.Controls.Add(this.panel13);
             this.groupBox2.Controls.Add(this.panel12);
+            this.groupBox2.Controls.Add(this.panel17);
             this.groupBox2.Controls.Add(this.panel11);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(506, 325);
@@ -413,7 +423,7 @@ namespace GUI
             this.panel14.Controls.Add(this.txtSoTienPhaiThanhToan);
             this.panel14.Controls.Add(this.label28);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(10, 167);
+            this.panel14.Location = new System.Drawing.Point(10, 211);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(773, 44);
             this.panel14.TabIndex = 4;
@@ -438,22 +448,28 @@ namespace GUI
             // 
             // panel13
             // 
-            this.panel13.Controls.Add(this.txtGiamTru);
+            this.panel13.Controls.Add(this.nudGiamTru);
             this.panel13.Controls.Add(this.label26);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel13.Location = new System.Drawing.Point(10, 123);
+            this.panel13.Location = new System.Drawing.Point(10, 167);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(773, 44);
             this.panel13.TabIndex = 3;
             // 
-            // txtGiamTru
+            // nudGiamTru
             // 
-            this.txtGiamTru.AutoSize = true;
-            this.txtGiamTru.Location = new System.Drawing.Point(141, 10);
-            this.txtGiamTru.Name = "txtGiamTru";
-            this.txtGiamTru.Size = new System.Drawing.Size(75, 24);
-            this.txtGiamTru.TabIndex = 2;
-            this.txtGiamTru.Text = "label23";
+            this.nudGiamTru.Location = new System.Drawing.Point(145, 7);
+            this.nudGiamTru.Maximum = new decimal(new int[] {
+            276447232,
+            23283,
+            0,
+            0});
+            this.nudGiamTru.Name = "nudGiamTru";
+            this.nudGiamTru.Size = new System.Drawing.Size(252, 32);
+            this.nudGiamTru.TabIndex = 1;
+            this.nudGiamTru.ValueChanged += new System.EventHandler(this.nudGiamTru_ValueChanged);
+            this.nudGiamTru.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudGiamTru_KeyPress);
+            this.nudGiamTru.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nudGiamTru_KeyUp);
             // 
             // label26
             // 
@@ -469,7 +485,7 @@ namespace GUI
             this.panel12.Controls.Add(this.txtTongTien);
             this.panel12.Controls.Add(this.label24);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(10, 79);
+            this.panel12.Location = new System.Drawing.Point(10, 123);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(773, 44);
             this.panel12.TabIndex = 2;
@@ -491,6 +507,34 @@ namespace GUI
             this.label24.Size = new System.Drawing.Size(102, 24);
             this.label24.TabIndex = 0;
             this.label24.Text = "Tổng tiền:";
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.txtTraTruoc);
+            this.panel17.Controls.Add(this.label5);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel17.Location = new System.Drawing.Point(10, 79);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(773, 44);
+            this.panel17.TabIndex = 5;
+            // 
+            // txtTraTruoc
+            // 
+            this.txtTraTruoc.AutoSize = true;
+            this.txtTraTruoc.Location = new System.Drawing.Point(141, 10);
+            this.txtTraTruoc.Name = "txtTraTruoc";
+            this.txtTraTruoc.Size = new System.Drawing.Size(34, 24);
+            this.txtTraTruoc.TabIndex = 1;
+            this.txtTraTruoc.Text = "txt";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 24);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Trả trước:";
             // 
             // panel11
             // 
@@ -746,6 +790,23 @@ namespace GUI
             this.btnThanhToan.UseVisualStyleBackColor = true;
             this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.lbResult);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel18.Location = new System.Drawing.Point(10, 255);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(773, 44);
+            this.panel18.TabIndex = 6;
+            // 
+            // lbResult
+            // 
+            this.lbResult.AutoSize = true;
+            this.lbResult.Location = new System.Drawing.Point(15, 10);
+            this.lbResult.Name = "lbResult";
+            this.lbResult.Size = new System.Drawing.Size(0, 24);
+            this.lbResult.TabIndex = 0;
+            // 
             // fmThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -783,8 +844,11 @@ namespace GUI
             this.panel14.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGiamTru)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.panel17.ResumeLayout(false);
+            this.panel17.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -801,6 +865,8 @@ namespace GUI
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -822,7 +888,6 @@ namespace GUI
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label txtHoTenKH;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label txtMaPhieu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel10;
@@ -865,10 +930,16 @@ namespace GUI
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label txtCCCD;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label txtGiamTru;
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Button btnInHoaDon;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.NumericUpDown nudGiamTru;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Label txtTraTruoc;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Label lbResult;
     }
 }

@@ -57,5 +57,36 @@ namespace BLL
         {
             new HoaDonDAL().Update(hoaDonMoi);
         }
+        public static void UpdateStatus(string maHD, bool status)
+        {
+            new HoaDonDAL().UpdateStatus(maHD, status);
+        }
+        
+        public static decimal MaximumDiscount(string maPhieuDatPhong)
+        {
+            tb_HoaDon _hoaDon = HoaDonBLL.GetInvoiceByReservedTicket(maPhieuDatPhong);
+            if(_hoaDon != null)
+            {
+                decimal tongTien = (decimal)_hoaDon.TongTien;
+                decimal traTruoc = (decimal)_hoaDon.tb_PhieuDatPhong.TraTruoc;
+
+                return (tongTien - traTruoc);
+            }
+            return -1;
+        }
+
+        public static decimal IntoMoney(decimal giamTru, string maPhieuDatPhong)
+        {
+            decimal tinhTien = MaximumDiscount(maPhieuDatPhong);
+            if(tinhTien != -1)
+            {
+                if (giamTru >= 0 && giamTru <= tinhTien)
+                {
+                    return (tinhTien - giamTru);
+                }
+                else return -1;
+            }
+            else return -1;
+        }
     }
 }
