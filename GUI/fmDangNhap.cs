@@ -1,13 +1,6 @@
 ﻿using BLL;
-using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -15,47 +8,65 @@ namespace GUI
     public partial class fmDangNhap : DevExpress.XtraEditors.XtraForm
     {
         public static Main mainForm;
+
+        private readonly ErrorProvider errorProvider = new ErrorProvider();
+
         public fmDangNhap()
         {
             InitializeComponent();
-
         }
 
-        private void BtnDangNhap_Click(object sender, EventArgs e)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if (IsValidateForm())
+            try
             {
-                if (TaiKhoanBLL.checkUsernameExist(txtUsername.Text))
+                if (IsValidateForm())
                 {
-                    if (TaiKhoanBLL.checkPassword(txtUsername.Text, txtPassword.Text))
+                    if (TaiKhoanBLL.checkUsernameExist(txtUsername.Text))
                     {
-                        mainForm = new Main(txtUsername.Text);
-                        mainForm.Show();
-                        this.Visible = false;
+                        if (TaiKhoanBLL.checkPassword(txtUsername.Text, txtPassword.Text))
+                        {
+                            mainForm = new Main(txtUsername.Text);
+                            mainForm.Show();
+                            Visible = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Mật khẩu không đúng.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Mật khẩu không đúng.");
+                        MessageBox.Show("Tài khoản không tồn tại");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Tài khoản không tồn tại");
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
-        private void FmDangNhap_Load(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Bạn có chắc muốn thoát?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Close();
+            }
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
+        private void BtnLogin_MouseHover(object sender, EventArgs e)
         {
-            this.Close();
+            btnDangNhap.Appearance.BackColor = Color.Crimson;
+            btnDangNhap.Appearance.ForeColor = Color.White;
         }
 
-        ErrorProvider errorProvider = new ErrorProvider();
+        private void BtnLogin_MouseLeave(object sender, EventArgs e)
+        {
+            btnDangNhap.Appearance.BackColor = Color.White;
+            btnDangNhap.Appearance.ForeColor = Color.Black;
+        }
 
         private bool IsValidateForm()
         {
@@ -64,31 +75,26 @@ namespace GUI
 
         private bool IsValidateUsername()
         {
-            if (txtUsername.Text.Trim() == String.Empty)
+            if (txtUsername.Text.Trim() == string.Empty)
             {
                 errorProvider.SetError(txtUsername, "Tên đăng nhập không được để trống");
                 return false;
             }
-            else
-            {
-                errorProvider.Clear();
-                return true;
-            }
-        }
 
+            errorProvider.Clear();
+            return true;
+        }
 
         private bool IsValidatePassword()
         {
-            if (txtPassword.Text.Trim() == String.Empty)
+            if (txtPassword.Text.Trim() == string.Empty)
             {
                 errorProvider.SetError(txtPassword, "Mật khẩu không được để trống");
                 return false;
             }
-            else
-            {
-                errorProvider.Clear();
-                return true;
-            }
+
+            errorProvider.Clear();
+            return true;
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)

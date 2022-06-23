@@ -1,22 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using DTO;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DTO;
 
 namespace GUI
 {
     public partial class UcPhong : UserControl
     {
-        tb_Phong _phong;
-
-        public tb_Phong Phong { get => _phong; set => _phong = value; }
-
         public UcPhong(tb_Phong phong)
         {
             InitializeComponent();
@@ -25,9 +15,12 @@ namespace GUI
             LoadUI();
         }
 
+        public tb_Phong Phong { get; set; }
+
         private void LoadUI()
         {
-            btnPhong.Text = $"{Phong.TenPhong}\n{Phong.tb_LoaiPhong.TenLoaiPhong}\nSố người: {Phong.tb_LoaiPhong.SoLuongNguoiLon}";
+            btnPhong.Text =
+                $"{Phong.TenPhong}\n{Phong.tb_LoaiPhong.TenLoaiPhong}\nSố người: {Phong.tb_LoaiPhong.SoLuongNguoiLon}";
             if (Phong.TrangThai.Equals("Đang có khách"))
                 btnPhong.Appearance.BackColor = Color.Red;
             else if (Phong.TrangThai.Equals("Chưa dọn"))
@@ -38,12 +31,10 @@ namespace GUI
 
         private void UcPhong_Load(object sender, EventArgs e)
         {
-
         }
 
         private void btnPhong_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

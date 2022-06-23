@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestSettings name="TestSettings2" id="f6a6529a-e765-4304-8ef8-a699d97335e3" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Description>These are default test settings for a local test run.</Description>
+  <Deployment>
+    <DeploymentItem filename="CodeUnitTest\Data_TestCases_ThanhToan.xml" />
+    <DeploymentItem filename="CodeUnitTest\Data_TestCases_DangNhap.xml" />
+  </Deployment>
+  <RemoteController name="user32" />
+  <Execution hostProcessPlatform="MSIL">
+    <TestTypeSpecific>
+      <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+        <AssemblyResolution>
+          <TestDirectory useLoadContext="true" />
+        </AssemblyResolution>
+      </UnitTestRunConfig>
+    </TestTypeSpecific>
+    <AgentRule name="LocalMachineDefaultRole">
+    </AgentRule>
+  </Execution>
+  <Properties />
+  <CollectionOnlyAgents>
+    <AgentRules>
+      <AgentRule name="AllAgentsDefaultRole">
+      </AgentRule>
+    </AgentRules>
+  </CollectionOnlyAgents>
+</TestSettings>

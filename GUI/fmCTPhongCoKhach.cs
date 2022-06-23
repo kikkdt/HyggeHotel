@@ -2,22 +2,16 @@
 using DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class fmCTPhongCoKhach : Form
+    public partial class fmCTPhongCoKhach : DevExpress.XtraEditors.XtraForm
     {
-        private tb_Phong _phong;
-        private tb_PhieuDatPhong _phieuDatPhong;
         private tb_CTDatPhong _ctDatPhong;
         private tb_HoaDon _hoaDon;
+        private tb_PhieuDatPhong _phieuDatPhong;
+        private readonly tb_Phong _phong;
 
         public fmCTPhongCoKhach(tb_Phong phong)
         {
@@ -30,14 +24,12 @@ namespace GUI
         private void GetData()
         {
             // Get unpaid invoices
-            List<tb_HoaDon> hoaDons = HoaDonBLL.GetUnpaidInvoices();
+            var hoaDons = HoaDonBLL.GetUnpaidInvoices();
             // Get reserved tickets of unpaid invoices
-            List<tb_PhieuDatPhong> phieuDatPhongs = hoaDons.Select(hd => hd.tb_PhieuDatPhong).ToList();
+            var phieuDatPhongs = hoaDons.Select(hd => hd.tb_PhieuDatPhong).ToList();
 
             foreach (var phieu in phieuDatPhongs)
-            {
                 foreach (var ctDatPhong in phieu.tb_CTDatPhongs)
-                {
                     if (ctDatPhong.MaPhong.Equals(_phong.MaPhong))
                     {
                         _phieuDatPhong = phieu;
@@ -45,29 +37,27 @@ namespace GUI
                         _hoaDon = HoaDonBLL.GetInvoiceByReservedTicket(phieu.MaPhieuDat);
                         return;
                     }
-                }
-            }
         }
 
         private void FmCTPhongCoKhach_Load(object sender, EventArgs e)
         {
             Text = $"Thông tin phòng - {_phong.TenPhong}";
             lblKhachHang.Text = KhachHangBLL.GetCustomer(_phieuDatPhong.CCCD).HoTen;
-            lblTamTinh.Text = String.Format("{0:#,##0}", _hoaDon.TongTien);
+            lblTamTinh.Text = string.Format("{0:#,##0}", _hoaDon.TongTien);
         }
 
         private void BtnThemDichVu_Click(object sender, EventArgs e)
         {
-            List<tb_CTDatPhong> lstCTDatPhong = new List<tb_CTDatPhong>();
+            var lstCTDatPhong = new List<tb_CTDatPhong>();
             lstCTDatPhong.Add(_ctDatPhong);
-            fmThemDichVu fmThemDichVu = new fmThemDichVu(lstCTDatPhong);
+            var fmThemDichVu = new fmThemDichVu(lstCTDatPhong);
             fmThemDichVu.ShowDialog();
             Close();
         }
 
-        private void btnThanhToan_Click(object sender, EventArgs e)
-        { 
-            fmThanhToan fmThanhToan = new fmThanhToan(_ctDatPhong);
+        private void BtnThanhToan_Click(object sender, EventArgs e)
+        {
+            var fmThanhToan = new fmThanhToan(_ctDatPhong);
             Close();
             fmThanhToan.ShowDialog();
         }

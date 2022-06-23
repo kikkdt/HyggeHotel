@@ -33,6 +33,9 @@ namespace DTO
     partial void Inserttb_CTDatPhong(tb_CTDatPhong instance);
     partial void Updatetb_CTDatPhong(tb_CTDatPhong instance);
     partial void Deletetb_CTDatPhong(tb_CTDatPhong instance);
+    partial void Inserttb_TangLau(tb_TangLau instance);
+    partial void Updatetb_TangLau(tb_TangLau instance);
+    partial void Deletetb_TangLau(tb_TangLau instance);
     partial void Inserttb_CTDatPhong_SanPham(tb_CTDatPhong_SanPham instance);
     partial void Updatetb_CTDatPhong_SanPham(tb_CTDatPhong_SanPham instance);
     partial void Deletetb_CTDatPhong_SanPham(tb_CTDatPhong_SanPham instance);
@@ -69,13 +72,10 @@ namespace DTO
     partial void Inserttb_TaiKhoan(tb_TaiKhoan instance);
     partial void Updatetb_TaiKhoan(tb_TaiKhoan instance);
     partial void Deletetb_TaiKhoan(tb_TaiKhoan instance);
-    partial void Inserttb_TangLau(tb_TangLau instance);
-    partial void Updatetb_TangLau(tb_TangLau instance);
-    partial void Deletetb_TangLau(tb_TangLau instance);
     #endregion
 		
 		public HyggeDbDataContext() : 
-				base(global::DTO.Properties.Settings.Default.dbQLKSConnectionString1, mappingSource)
+				base(global::DTO.Properties.Settings.Default.dbQLKSConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -109,6 +109,14 @@ namespace DTO
 			get
 			{
 				return this.GetTable<tb_CTDatPhong>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tb_TangLau> tb_TangLaus
+		{
+			get
+			{
+				return this.GetTable<tb_TangLau>();
 			}
 		}
 		
@@ -213,14 +221,6 @@ namespace DTO
 			get
 			{
 				return this.GetTable<tb_TaiKhoan>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tb_TangLau> tb_TangLaus
-		{
-			get
-			{
-				return this.GetTable<tb_TangLau>();
 			}
 		}
 	}
@@ -562,6 +562,240 @@ namespace DTO
 		{
 			this.SendPropertyChanging();
 			entity.tb_CTDatPhong = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tb_TangLau")]
+	public partial class tb_TangLau : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaTang;
+		
+		private string _TenTang;
+		
+		private int _SoLuongPhong;
+		
+		private string _GhiChu;
+		
+		private System.Nullable<int> _SapXep;
+		
+		private System.Nullable<bool> _DaDay;
+		
+		private System.Nullable<bool> _DaXoa;
+		
+		private EntitySet<tb_Phong> _tb_Phongs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaTangChanging(int value);
+    partial void OnMaTangChanged();
+    partial void OnTenTangChanging(string value);
+    partial void OnTenTangChanged();
+    partial void OnSoLuongPhongChanging(int value);
+    partial void OnSoLuongPhongChanged();
+    partial void OnGhiChuChanging(string value);
+    partial void OnGhiChuChanged();
+    partial void OnSapXepChanging(System.Nullable<int> value);
+    partial void OnSapXepChanged();
+    partial void OnDaDayChanging(System.Nullable<bool> value);
+    partial void OnDaDayChanged();
+    partial void OnDaXoaChanging(System.Nullable<bool> value);
+    partial void OnDaXoaChanged();
+    #endregion
+		
+		public tb_TangLau()
+		{
+			this._tb_Phongs = new EntitySet<tb_Phong>(new Action<tb_Phong>(this.attach_tb_Phongs), new Action<tb_Phong>(this.detach_tb_Phongs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTang", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaTang
+		{
+			get
+			{
+				return this._MaTang;
+			}
+			set
+			{
+				if ((this._MaTang != value))
+				{
+					this.OnMaTangChanging(value);
+					this.SendPropertyChanging();
+					this._MaTang = value;
+					this.SendPropertyChanged("MaTang");
+					this.OnMaTangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTang", DbType="NVarChar(60) NOT NULL", CanBeNull=false)]
+		public string TenTang
+		{
+			get
+			{
+				return this._TenTang;
+			}
+			set
+			{
+				if ((this._TenTang != value))
+				{
+					this.OnTenTangChanging(value);
+					this.SendPropertyChanging();
+					this._TenTang = value;
+					this.SendPropertyChanged("TenTang");
+					this.OnTenTangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuongPhong", DbType="Int NOT NULL")]
+		public int SoLuongPhong
+		{
+			get
+			{
+				return this._SoLuongPhong;
+			}
+			set
+			{
+				if ((this._SoLuongPhong != value))
+				{
+					this.OnSoLuongPhongChanging(value);
+					this.SendPropertyChanging();
+					this._SoLuongPhong = value;
+					this.SendPropertyChanged("SoLuongPhong");
+					this.OnSoLuongPhongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(240)")]
+		public string GhiChu
+		{
+			get
+			{
+				return this._GhiChu;
+			}
+			set
+			{
+				if ((this._GhiChu != value))
+				{
+					this.OnGhiChuChanging(value);
+					this.SendPropertyChanging();
+					this._GhiChu = value;
+					this.SendPropertyChanged("GhiChu");
+					this.OnGhiChuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SapXep", DbType="Int")]
+		public System.Nullable<int> SapXep
+		{
+			get
+			{
+				return this._SapXep;
+			}
+			set
+			{
+				if ((this._SapXep != value))
+				{
+					this.OnSapXepChanging(value);
+					this.SendPropertyChanging();
+					this._SapXep = value;
+					this.SendPropertyChanged("SapXep");
+					this.OnSapXepChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DaDay", DbType="Bit")]
+		public System.Nullable<bool> DaDay
+		{
+			get
+			{
+				return this._DaDay;
+			}
+			set
+			{
+				if ((this._DaDay != value))
+				{
+					this.OnDaDayChanging(value);
+					this.SendPropertyChanging();
+					this._DaDay = value;
+					this.SendPropertyChanged("DaDay");
+					this.OnDaDayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DaXoa", DbType="Bit")]
+		public System.Nullable<bool> DaXoa
+		{
+			get
+			{
+				return this._DaXoa;
+			}
+			set
+			{
+				if ((this._DaXoa != value))
+				{
+					this.OnDaXoaChanging(value);
+					this.SendPropertyChanging();
+					this._DaXoa = value;
+					this.SendPropertyChanged("DaXoa");
+					this.OnDaXoaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tb_TangLau_tb_Phong", Storage="_tb_Phongs", ThisKey="MaTang", OtherKey="MaTang")]
+		public EntitySet<tb_Phong> tb_Phongs
+		{
+			get
+			{
+				return this._tb_Phongs;
+			}
+			set
+			{
+				this._tb_Phongs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tb_Phongs(tb_Phong entity)
+		{
+			this.SendPropertyChanging();
+			entity.tb_TangLau = this;
+		}
+		
+		private void detach_tb_Phongs(tb_Phong entity)
+		{
+			this.SendPropertyChanging();
+			entity.tb_TangLau = null;
 		}
 	}
 	
@@ -3580,240 +3814,6 @@ namespace DTO
 		{
 			this.SendPropertyChanging();
 			entity.tb_TaiKhoan = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tb_TangLau")]
-	public partial class tb_TangLau : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaTang;
-		
-		private string _TenTang;
-		
-		private int _SoLuongPhong;
-		
-		private string _GhiChu;
-		
-		private System.Nullable<int> _SapXep;
-		
-		private System.Nullable<bool> _DaDay;
-		
-		private System.Nullable<bool> _DaXoa;
-		
-		private EntitySet<tb_Phong> _tb_Phongs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaTangChanging(int value);
-    partial void OnMaTangChanged();
-    partial void OnTenTangChanging(string value);
-    partial void OnTenTangChanged();
-    partial void OnSoLuongPhongChanging(int value);
-    partial void OnSoLuongPhongChanged();
-    partial void OnGhiChuChanging(string value);
-    partial void OnGhiChuChanged();
-    partial void OnSapXepChanging(System.Nullable<int> value);
-    partial void OnSapXepChanged();
-    partial void OnDaDayChanging(System.Nullable<bool> value);
-    partial void OnDaDayChanged();
-    partial void OnDaXoaChanging(System.Nullable<bool> value);
-    partial void OnDaXoaChanged();
-    #endregion
-		
-		public tb_TangLau()
-		{
-			this._tb_Phongs = new EntitySet<tb_Phong>(new Action<tb_Phong>(this.attach_tb_Phongs), new Action<tb_Phong>(this.detach_tb_Phongs));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTang", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaTang
-		{
-			get
-			{
-				return this._MaTang;
-			}
-			set
-			{
-				if ((this._MaTang != value))
-				{
-					this.OnMaTangChanging(value);
-					this.SendPropertyChanging();
-					this._MaTang = value;
-					this.SendPropertyChanged("MaTang");
-					this.OnMaTangChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTang", DbType="NVarChar(60) NOT NULL", CanBeNull=false)]
-		public string TenTang
-		{
-			get
-			{
-				return this._TenTang;
-			}
-			set
-			{
-				if ((this._TenTang != value))
-				{
-					this.OnTenTangChanging(value);
-					this.SendPropertyChanging();
-					this._TenTang = value;
-					this.SendPropertyChanged("TenTang");
-					this.OnTenTangChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuongPhong", DbType="Int NOT NULL")]
-		public int SoLuongPhong
-		{
-			get
-			{
-				return this._SoLuongPhong;
-			}
-			set
-			{
-				if ((this._SoLuongPhong != value))
-				{
-					this.OnSoLuongPhongChanging(value);
-					this.SendPropertyChanging();
-					this._SoLuongPhong = value;
-					this.SendPropertyChanged("SoLuongPhong");
-					this.OnSoLuongPhongChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(240)")]
-		public string GhiChu
-		{
-			get
-			{
-				return this._GhiChu;
-			}
-			set
-			{
-				if ((this._GhiChu != value))
-				{
-					this.OnGhiChuChanging(value);
-					this.SendPropertyChanging();
-					this._GhiChu = value;
-					this.SendPropertyChanged("GhiChu");
-					this.OnGhiChuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SapXep", DbType="Int")]
-		public System.Nullable<int> SapXep
-		{
-			get
-			{
-				return this._SapXep;
-			}
-			set
-			{
-				if ((this._SapXep != value))
-				{
-					this.OnSapXepChanging(value);
-					this.SendPropertyChanging();
-					this._SapXep = value;
-					this.SendPropertyChanged("SapXep");
-					this.OnSapXepChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DaDay", DbType="Bit")]
-		public System.Nullable<bool> DaDay
-		{
-			get
-			{
-				return this._DaDay;
-			}
-			set
-			{
-				if ((this._DaDay != value))
-				{
-					this.OnDaDayChanging(value);
-					this.SendPropertyChanging();
-					this._DaDay = value;
-					this.SendPropertyChanged("DaDay");
-					this.OnDaDayChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DaXoa", DbType="Bit")]
-		public System.Nullable<bool> DaXoa
-		{
-			get
-			{
-				return this._DaXoa;
-			}
-			set
-			{
-				if ((this._DaXoa != value))
-				{
-					this.OnDaXoaChanging(value);
-					this.SendPropertyChanging();
-					this._DaXoa = value;
-					this.SendPropertyChanged("DaXoa");
-					this.OnDaXoaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tb_TangLau_tb_Phong", Storage="_tb_Phongs", ThisKey="MaTang", OtherKey="MaTang")]
-		public EntitySet<tb_Phong> tb_Phongs
-		{
-			get
-			{
-				return this._tb_Phongs;
-			}
-			set
-			{
-				this._tb_Phongs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tb_Phongs(tb_Phong entity)
-		{
-			this.SendPropertyChanging();
-			entity.tb_TangLau = this;
-		}
-		
-		private void detach_tb_Phongs(tb_Phong entity)
-		{
-			this.SendPropertyChanging();
-			entity.tb_TangLau = null;
 		}
 	}
 }

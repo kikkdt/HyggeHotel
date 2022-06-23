@@ -1,49 +1,41 @@
 ﻿using DTO;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
     public class TaiKhoanDAL
     {
-        public bool checkUsernameExist(String username)
+        public bool checkUsernameExist(string username)
         {
-            bool isExist = false;
+            var isExist = false;
             using (var db = new HyggeDbDataContext())
             {
                 var acc = db.tb_TaiKhoans.Where(t => t.TenDangNhap.Equals(username)).FirstOrDefault();
-                if (acc != null)
-                {
-                    isExist = true;
-                }
+                if (acc != null) isExist = true;
             }
+
             return isExist;
         }
 
-
-        public bool checkPassword(String username, String password)
+        public bool checkPassword(string username, string password)
         {
-            bool isExist = false;
+            var isExist = false;
             using (var db = new HyggeDbDataContext())
             {
-                var acc = db.tb_TaiKhoans.Where(t => t.TenDangNhap.Equals(username) && t.MatKhau.Equals(password)).FirstOrDefault();
-                if (acc != null)
-                {
-                    isExist = true;
-                }
+                var acc = db.tb_TaiKhoans.Where(t => t.TenDangNhap.Equals(username) && t.MatKhau.Equals(password))
+                    .FirstOrDefault();
+                if (acc != null) isExist = true;
             }
+
             return isExist;
         }
 
-
-        public bool changePassword(String username, String passwordOld, String passwordNew)
+        public bool changePassword(string username, string passwordOld, string passwordNew)
         {
             using (var db = new HyggeDbDataContext())
             {
-                tb_TaiKhoan taiKhoan = db.tb_TaiKhoans.Where(t => t.TenDangNhap.Equals(username) && t.MatKhau.Equals(passwordOld)).FirstOrDefault();
+                var taiKhoan = db.tb_TaiKhoans
+                    .Where(t => t.TenDangNhap.Equals(username) && t.MatKhau.Equals(passwordOld)).FirstOrDefault();
                 if (taiKhoan != null)
                 {
                     taiKhoan.MatKhau = passwordNew;
@@ -51,6 +43,7 @@ namespace DAL
                     return true;
                 }
             }
+
             return false;
         }
     }

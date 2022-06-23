@@ -1,17 +1,13 @@
 ﻿using DAL;
 using DTO;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {
     public class PhongBLL
     {
         /// <summary>
-        /// Get list all of rooms
+        ///     Get list all of rooms
         /// </summary>
         /// <returns>List all of rooms</returns>
         public static List<tb_Phong> GetRooms()
@@ -20,7 +16,7 @@ namespace BLL
         }
 
         /// <summary>
-        /// Get list all of rooms by floor
+        ///     Get list all of rooms by floor
         /// </summary>
         /// <param name="tangLau">Floor</param>
         /// <returns>List all of rooms</returns>
@@ -35,7 +31,7 @@ namespace BLL
         }
 
         /// <summary>
-        /// Count the number of rooms by status
+        ///     Count the number of rooms by status
         /// </summary>
         /// <param name="trangThai">Status want to count</param>
         /// <returns>Number of rooms</returns>

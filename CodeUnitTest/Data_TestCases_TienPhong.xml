@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<TestDatas>
+	<Record>
+		<LoaiHinh>Ngày</LoaiHinh>
+		<MaCTDatPhong>9999</MaCTDatPhong>
+		<MaPhong>PHG0001</MaPhong>
+		<CheckIn>2022-05-27 11:00:00.000</CheckIn>
+		<CheckOut>2022-05-28 14:00:00.000</CheckOut>
+		<TongTienExpected>300000</TongTienExpected>
+	</Record>
+	<Record>
+		<LoaiHinh>Ngày</LoaiHinh>
+		<MaCTDatPhong>9999</MaCTDatPhong>
+		<MaPhong>PHG0002</MaPhong>
+		<CheckIn>2022-05-27 11:00:00.000</CheckIn>
+		<CheckOut>2022-05-28 14:00:00.000</CheckOut>
+		<TongTienExpected>270000</TongTienExpected>
+	</Record>
+	<Record>
+		<LoaiHinh>Ngày</LoaiHinh>
+		<MaCTDatPhong>9999</MaCTDatPhong>
+		<MaPhong>PHG0001</MaPhong>
+		<CheckIn>2022-05-27 11:00:00.000</CheckIn>
+		<CheckOut>2022-05-28 15:00:00.000</CheckOut>
+		<TongTienExpected>600000</TongTienExpected>
+	</Record>
+	<Record>
+		<LoaiHinh>Ngày</LoaiHinh>
+		<MaCTDatPhong>9999</MaCTDatPhong>
+		<MaPhong>PHG0002</MaPhong>
+		<CheckIn>2022-05-27 11:00:00.000</CheckIn>
+		<CheckOut>2022-05-28 15:00:00.000</CheckOut>
+		<TongTienExpected>540000</TongTienExpected>
+	</Record>
+	<Record>
+		<LoaiHinh>Giờ</LoaiHinh>
+		<MaCTDatPhong>9999</MaCTDatPhong>
+		<MaPhong>PHG0002</MaPhong>
+		<CheckIn>2022-05-27 09:00:00.000</CheckIn>
+		<CheckOut>2022-05-28 11:00:00.000</CheckOut>
+		<TongTienExpected>1820000</TongTienExpected>
+	</Record>
+	<Record>
+		<LoaiHinh>Giờ</LoaiHinh>
+		<MaCTDatPhong>9999</MaCTDatPhong>
+		<MaPhong>PHG0001</MaPhong>
+		<CheckIn>2022-05-27 09:00:00.000</CheckIn>
+		<CheckOut>2022-05-28 09:00:00.000</CheckOut>
+		<TongTienExpected>1680000</TongTienExpected>
+	</Record>
+</TestDatas>

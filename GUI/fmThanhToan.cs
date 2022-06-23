@@ -1,55 +1,53 @@
 ﻿using BLL;
 using DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class fmThanhToan : Form
+    public partial class fmThanhToan : DevExpress.XtraEditors.XtraForm
     {
-        private tb_CTDatPhong _ctDatPhong;
+        private readonly tb_CTDatPhong _ctDatPhong;
+        private readonly tb_HoaDon _hoaDon;
+
         public fmThanhToan(tb_CTDatPhong _ctDatPhong)
         {
             InitializeComponent();
             this._ctDatPhong = _ctDatPhong;
+            _hoaDon = HoaDonBLL.GetInvoiceByReservedTicket(_ctDatPhong.MaPhieuDat);
         }
 
-        
         private void fmThanhToan_Load(object sender, EventArgs e)
         {
             LoadListProduct();
             LoadPhieuDatPhong();
             LoadChiTietPhong();
             LoadHoaDon();
+            nudGiamTru.Minimum = 0;
         }
 
         private void LoadListProduct()
         {
-            HyggeDbDataContext db = new HyggeDbDataContext();
+            var db = new HyggeDbDataContext();
             var temp = db.tb_CTDatPhong_SanPhams
                 .Where(t => t.MaCTDatPhong == _ctDatPhong.MaCTDatPhong)
-                .Select( t => new {
-                    TenSanPham = t.tb_SanPham.TenSanPham,
-                    DonGia = t.tb_SanPham.DonGia,
-                    SoLuong = t.SoLuong,
+                .Select(t => new
+                {
+                    t.tb_SanPham.TenSanPham,
+                    t.tb_SanPham.DonGia,
+                    t.SoLuong
                 }).ToList();
 
-            int i = 1;
+            var i = 1;
             // Add to datagridview
             dgvDsSanPham.Rows.Clear();
             foreach (var item in temp)
             {
-                dgvDsSanPham.Rows.Add(i, item.TenSanPham, string.Format("{0:#,##0}", item.DonGia), item.SoLuong, string.Format("{0:#,##0}", item.DonGia * item.SoLuong));
+                dgvDsSanPham.Rows.Add(i, item.TenSanPham, string.Format("{0:#,##0}", item.DonGia), item.SoLuong,
+                    string.Format("{0:#,##0}", item.DonGia * item.SoLuong));
                 i++;
             }
-
         }
 
         private void LoadPhieuDatPhong()
@@ -62,6 +60,7 @@ namespace GUI
             txtHoTenNV.Text = phieuDatPhong.tb_NhanVien.HoTen;
             txtNgayLap.Text = phieuDatPhong.NgayLap.ToString();
         }
+
         private void LoadChiTietPhong()
         {
             txtTenPhong.Text = _ctDatPhong.tb_Phong.TenPhong;
@@ -69,37 +68,75 @@ namespace GUI
             txtSoTreEm.Text = _ctDatPhong.SoLuongTreEm.ToString();
             txtNgayNhan.Text = _ctDatPhong.CheckIn.ToString();
             txtNgayTra.Text = _ctDatPhong.CheckOut.ToString();
-            txtThanhTien.Text = string.Format("{0:#,##0}", _ctDatPhong.ThanhTien); 
+            txtThanhTien.Text = string.Format("{0:#,##0}", _ctDatPhong.ThanhTien);
         }
+
         private void LoadHoaDon()
         {
-            var hoaDon = HoaDonBLL.GetInvoiceByReservedTicket(_ctDatPhong.MaPhieuDat);
+            txtMaHoaDon.Text = _hoaDon.MaHD;
+            txtTraTruoc.Text = string.Format("{0:#,##0 đ}", _hoaDon.tb_PhieuDatPhong.TraTruoc);
+            txtTongTien.Text = string.Format("{0:#,##0 đ}", _hoaDon.TongTien);
+            nudGiamTru.Value = _hoaDon.GiamTru == null ? 0 : (decimal)_hoaDon.GiamTru;
 
-            txtMaHoaDon.Text = hoaDon.MaHD;
-            txtSoTienPhaiThanhToan.Text = string.Format("{0:#,##0 đ}", hoaDon.ThanhTien);
-            txtTongTien.Text = string.Format("{0:#,##0 đ}", hoaDon.TongTien);
-            txtGiamTru.Text = string.Format("{0:#,##0 đ}", hoaDon.GiamTru).Equals("")? "0": string.Format("{0:#,##0 đ}", hoaDon.GiamTru);
+            TongTien();
         }
 
         private void dgvDsSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
-
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            fmDangNhap.mainForm.barBtnSoDoPhong.PerformClick();
+            Close();
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Bạn có chắc muốn thanh toán.","Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                PhongBLL.UpdateStatus(_ctDatPhong.MaPhong, "Chưa dọn");
-                fmDangNhap.mainForm.barBtnSoDoPhong.PerformClick();
-                this.Close();
-            }
+            if (MessageBox.Show("Bạn có chắc muốn thanh toán.", "Thông báo", MessageBoxButtons.YesNo) ==
+                DialogResult.Yes)
+                try
+                {
+                    PhongBLL.UpdateStatus(_ctDatPhong.MaPhong, "Chưa dọn");
+
+                    _hoaDon.GiamTru = nudGiamTru.Value;
+                    _hoaDon.ThanhTien = _hoaDon.TongTien - nudGiamTru.Value - _hoaDon.tb_PhieuDatPhong.TraTruoc;
+                    _hoaDon.TrangThai = true;
+
+                    HoaDonBLL.Update(_hoaDon);
+                    lbResult.Text = "Thanh toán thành công.";
+
+                    btnThanhToan.Enabled = false;
+                }
+                catch
+                {
+                    lbResult.Text = "Thanh toán thất bại.";
+                }
+        }
+
+        private void nudGiamTru_ValueChanged(object sender, EventArgs e)
+        {
+            TongTien();
+        }
+
+        private void nudGiamTru_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
+
+        private void TongTien()
+        {
+            nudGiamTru.Maximum = HoaDonBLL.MaximumDiscount(_ctDatPhong.MaPhieuDat);
+
+            var thanhTien = HoaDonBLL.IntoMoney(nudGiamTru.Value, _ctDatPhong.MaPhieuDat);
+            if (thanhTien == -1)
+                MessageBox.Show("Số tiền giảm trừ không hợp lệ");
+            else
+                txtSoTienPhaiThanhToan.Text = string.Format("{0:#,##0 đ}", thanhTien);
+        }
+
+        private void nudGiamTru_KeyUp(object sender, KeyEventArgs e)
+        {
+            TongTien();
         }
     }
 }

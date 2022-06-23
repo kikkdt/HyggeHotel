@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DTO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
 
 namespace DAL
 {
     public class NhanVienDAL
     {
-        HyggeDbDataContext dataContext = new HyggeDbDataContext();
+        private readonly HyggeDbDataContext dataContext = new HyggeDbDataContext();
 
         public tb_NhanVien GetEmployee(string tenDangNhap)
         {

@@ -1,17 +1,13 @@
 ﻿using DAL;
 using DTO;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {
     public class HoaDonBLL
     {
         /// <summary>
-        /// Get a invoice by invoice ID
+        ///     Get a invoice by invoice ID
         /// </summary>
         /// <param name="maHoaDon">Invoice ID</param>
         /// <returns>A invoice</returns>
@@ -21,7 +17,7 @@ namespace BLL
         }
 
         /// <summary>
-        /// Get a invoice by reserved ticket ID
+        ///     Get a invoice by reserved ticket ID
         /// </summary>
         /// <param name="maPhieuDat">Reserved ticket ID</param>
         /// <returns>A invoice</returns>
@@ -31,7 +27,7 @@ namespace BLL
         }
 
         /// <summary>
-        /// Get list of all unpaid invoices
+        ///     Get list of all unpaid invoices
         /// </summary>
         /// <returns>list of all unpaid invoices</returns>
         public static List<tb_HoaDon> GetUnpaidInvoices()
@@ -42,13 +38,13 @@ namespace BLL
         public static void UpdateTotalAmount(string maPhieuDatPhong)
         {
             var hoaDon = GetInvoiceByReservedTicket(maPhieuDatPhong);
-            using (HyggeDbDataContext dataContext = new HyggeDbDataContext())
+            using (var dataContext = new HyggeDbDataContext())
             {
                 var phieuDatPhong = PhieuDatPhongBLL.GetReservedTicket(maPhieuDatPhong);
                 var ctDatPhongs = CTDatPhongBLL.GetDetailReservedTicket(maPhieuDatPhong);
-                double totalAmount = DatPhongBLL.CalcTotalAmount(phieuDatPhong.LoaiHinh, ctDatPhongs);
+                var totalAmount = DatPhongBLL.CalcTotalAmount(phieuDatPhong.LoaiHinh, ctDatPhongs);
                 hoaDon.TongTien = (decimal)totalAmount;
-                
+
                 Update(hoaDon);
             }
         }
@@ -56,6 +52,38 @@ namespace BLL
         public static void Update(tb_HoaDon hoaDonMoi)
         {
             new HoaDonDAL().Update(hoaDonMoi);
+        }
+
+        public static void UpdateStatus(string maHD, bool status)
+        {
+            new HoaDonDAL().UpdateStatus(maHD, status);
+        }
+
+        public static decimal MaximumDiscount(string maPhieuDatPhong)
+        {
+            var _hoaDon = GetInvoiceByReservedTicket(maPhieuDatPhong);
+            if (_hoaDon != null)
+            {
+                var tongTien = (decimal)_hoaDon.TongTien;
+                var traTruoc = (decimal)_hoaDon.tb_PhieuDatPhong.TraTruoc;
+
+                return tongTien - traTruoc;
+            }
+
+            return -1;
+        }
+
+        public static decimal IntoMoney(decimal giamTru, string maPhieuDatPhong)
+        {
+            var tinhTien = MaximumDiscount(maPhieuDatPhong);
+            if (tinhTien != -1)
+            {
+                if (giamTru >= 0 && giamTru <= tinhTien)
+                    return tinhTien - giamTru;
+                return -1;
+            }
+
+            return -1;
         }
     }
 }

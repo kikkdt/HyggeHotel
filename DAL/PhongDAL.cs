@@ -1,25 +1,25 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
 
 namespace DAL
 {
     public class PhongDAL
     {
-        private HyggeDbDataContext dataContext = new HyggeDbDataContext();
+        private readonly HyggeDbDataContext dataContext = new HyggeDbDataContext();
+
         /// <summary>
-        /// Get list all of rooms
+        ///     Get list all of rooms
         /// </summary>
         /// <returns>List all of rooms</returns>
         public List<tb_Phong> GetRooms()
         {
             return dataContext.tb_Phongs.ToList();
         }
+
         /// <summary>
-        /// Get list all of rooms by floor
+        ///     Get list all of rooms by floor
         /// </summary>
         /// <param name="tangLau">Floor</param>
         /// <returns>List all of rooms</returns>
@@ -32,7 +32,7 @@ namespace DAL
         {
             try
             {
-                tb_Phong phong = dataContext.tb_Phongs.Single(p => p.MaPhong.Equals(maPhong));
+                var phong = dataContext.tb_Phongs.Single(p => p.MaPhong.Equals(maPhong));
                 phong.TrangThai = trangThai;
                 dataContext.SubmitChanges();
             }
@@ -43,7 +43,7 @@ namespace DAL
         }
 
         /// <summary>
-        /// Count the number of rooms by status
+        ///     Count the number of rooms by status
         /// </summary>
         /// <param name="trangThai">Status want to count</param>
         /// <returns>Number of rooms</returns>
@@ -53,10 +53,13 @@ namespace DAL
             {
                 case "Phòng trống":
                     return dataContext.tb_Phongs.Where(p => p.TrangThai.Equals("Phòng trống")).Count();
+
                 case "Đang có khách":
                     return dataContext.tb_Phongs.Where(p => p.TrangThai.Equals("Đang có khách")).Count();
+
                 case "Chưa dọn":
                     return dataContext.tb_Phongs.Where(p => p.TrangThai.Equals("Chưa dọn")).Count();
+
                 default:
                     return dataContext.tb_Phongs.Count();
             }

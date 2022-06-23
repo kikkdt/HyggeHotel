@@ -1,32 +1,22 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BLL;
-using DevExpress.Utils.Layout;
-using DTO;
 
 namespace GUI.UserControls
 {
     public partial class UcTangLau : UserControl
     {
-        private tb_TangLau _tangLau;
-        private List<tb_Phong> _lstPhongSelected;
         private List<tb_Phong> _lstPhongExcept;
-
-        public tb_TangLau TangLau { get => _tangLau; set => _tangLau = value; }
-        public List<tb_Phong> LstPhong { get => _lstPhongSelected; }
 
         public UcTangLau(tb_TangLau tangLau)
         {
             InitializeComponent();
             TangLau = tangLau;
-            _lstPhongSelected = PhongBLL.GetRooms(tangLau);
+            LstPhong = PhongBLL.GetRooms(tangLau);
             lblTang.Text = TangLau.TenTang;
 
             LoadPhong();
@@ -36,7 +26,7 @@ namespace GUI.UserControls
         {
             InitializeComponent();
             TangLau = tangLau;
-            _lstPhongSelected = PhongBLL.GetRooms(tangLau);
+            LstPhong = PhongBLL.GetRooms(tangLau);
             lblTang.Text = TangLau.TenTang;
 
             LoadPhongWithSelected(lstPhongSelected, null);
@@ -46,55 +36,57 @@ namespace GUI.UserControls
         {
             InitializeComponent();
             TangLau = tangLau;
-            _lstPhongSelected = PhongBLL.GetRooms(tangLau);
+            LstPhong = PhongBLL.GetRooms(tangLau);
             _lstPhongExcept = lstPhongExcept;
             lblTang.Text = TangLau.TenTang;
 
             LoadPhongWithSelected(lstPhongSelected, lstPhongExcept);
         }
 
+        public tb_TangLau TangLau { get; set; }
+
+        public List<tb_Phong> LstPhong { get; }
+
         private void LoadPhong()
         {
-            foreach (tb_Phong phong in _lstPhongSelected)
+            foreach (var phong in LstPhong)
             {
-                UcPhong uc = new UcPhong(phong);
+                var uc = new UcPhong(phong);
                 uc.btnPhong.Click += (o, e) =>
-                  {
-                      if (phong.TrangThai.Equals("Phòng trống"))
-                      {
-                          fmCTPhongTrong fmCTPhongTrong = new fmCTPhongTrong(phong);
-                          fmCTPhongTrong.ShowDialog();
-                      }
-                      else if (phong.TrangThai.Equals("Đang có khách"))
-                      {
-                          fmCTPhongCoKhach fmCTPhongCoKhach = new fmCTPhongCoKhach(phong);
-                          fmCTPhongCoKhach.ShowDialog();
-                      }
-                      else if (phong.TrangThai.Equals("Chưa dọn"))
-                      {
-                          fmDonPhong fmDonPhong = new fmDonPhong(phong.MaPhong);
-                          fmDonPhong.ShowDialog();
-                      }
-                  };
+                {
+                    if (phong.TrangThai.Equals("Phòng trống"))
+                    {
+                        var fmCTPhongTrong = new fmCTPhongTrong(phong);
+                        fmCTPhongTrong.ShowDialog();
+                    }
+                    else if (phong.TrangThai.Equals("Đang có khách"))
+                    {
+                        var fmCTPhongCoKhach = new fmCTPhongCoKhach(phong);
+                        fmCTPhongCoKhach.ShowDialog();
+                    }
+                    else if (phong.TrangThai.Equals("Chưa dọn"))
+                    {
+                        var fmDonPhong = new fmDonPhong(phong.MaPhong);
+                        fmDonPhong.ShowDialog();
+                    }
+                };
                 pnlContainerPhong.Controls.Add(uc);
             }
         }
 
         private void LoadPhongWithSelected(List<tb_Phong> lstPhongSelected, List<tb_Phong> lstPhongExcept)
         {
-            foreach (tb_Phong phong in _lstPhongSelected)
+            foreach (var phong in LstPhong)
             {
-                UcPhong uc = new UcPhong(phong);
+                var uc = new UcPhong(phong);
                 if (lstPhongSelected.Any(p => p.MaPhong.Equals(phong.MaPhong)))
-                {
                     uc.btnPhong.Appearance.BackColor = Color.Blue;
-                }
 
                 // If the room status isn't "Phòng trống", it isn't available
-                if (!phong.TrangThai.Equals("Phòng trống") || lstPhongExcept != null && lstPhongExcept.Any(p => p.MaPhong.Equals(phong.MaPhong)))
-                {
+                if (!phong.TrangThai.Equals("Phòng trống") || (lstPhongExcept != null &&
+                                                               lstPhongExcept.Any(p =>
+                                                                   p.MaPhong.Equals(phong.MaPhong))))
                     uc.btnPhong.Enabled = false;
-                }
 
                 // Handle event click
                 uc.btnPhong.Click += (o, e) =>
@@ -116,12 +108,10 @@ namespace GUI.UserControls
 
         private void pnlContainerPhong_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void lblTang_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

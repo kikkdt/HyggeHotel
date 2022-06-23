@@ -53,15 +53,16 @@
             this.tableLayoutPanel1.Controls.Add(this.lblLoaiPhong, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblNguoiLon, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblTreEm, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 20);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(423, 213);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -138,28 +139,30 @@
             // 
             this.panel1.Controls.Add(this.btnNhanPhong);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(152, 123);
+            this.panel1.Location = new System.Drawing.Point(152, 156);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(268, 87);
+            this.panel1.Size = new System.Drawing.Size(268, 54);
             this.panel1.TabIndex = 0;
             // 
             // btnNhanPhong
             // 
-            this.btnNhanPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNhanPhong.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhanPhong.Appearance.Options.UseFont = true;
             this.btnNhanPhong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNhanPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNhanPhong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnNhanPhong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNhanPhong.ImageOptions.SvgImage")));
-            this.btnNhanPhong.Location = new System.Drawing.Point(81, 30);
+            this.btnNhanPhong.Location = new System.Drawing.Point(0, 0);
             this.btnNhanPhong.Margin = new System.Windows.Forms.Padding(6);
             this.btnNhanPhong.Name = "btnNhanPhong";
-            this.btnNhanPhong.Size = new System.Drawing.Size(175, 45);
+            this.btnNhanPhong.Size = new System.Drawing.Size(268, 54);
             this.btnNhanPhong.TabIndex = 1;
             this.btnNhanPhong.Text = "Nhận phòng";
             this.btnNhanPhong.Click += new System.EventHandler(this.BtnNhanPhong_Click);
             // 
             // fmCTPhongTrong
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(463, 253);

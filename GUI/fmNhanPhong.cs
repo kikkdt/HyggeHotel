@@ -1,50 +1,19 @@
-﻿using DevExpress.XtraEditors;
+﻿using BLL;
+using DevExpress.XtraBars.Navigation;
 using DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BLL;
 
 namespace GUI
 {
     public partial class fmNhanPhong : DevExpress.XtraEditors.XtraForm
     {
-        #region Global variable
         /// <summary>
-        /// Check-in time
+        ///     Flag to stop date or time's EditValueChanged event from firing when form load
         /// </summary>
-        private DateTime checkIn;
-
-        /// <summary>
-        /// Check-out time
-        /// </summary>
-        private DateTime checkOut;
-
-        /// <summary>
-        /// List of details reserved ticket
-        /// </summary>
-        private List<tb_CTDatPhong> ctDatPhongs = new List<tb_CTDatPhong>();
-
-        private double totalAmount = 0;
-        #endregion
-
-        #region Property
-        /// <summary>
-        /// Reserved ticket
-        /// </summary>
-        public tb_PhieuDatPhong PhieuDatPhong { get; set; }
-
-        /// <summary>
-        /// List of room
-        /// </summary>
-        public List<tb_Phong> Phongs { get; set; }
-        #endregion
+        private bool isFormLoad = true;
 
         public fmNhanPhong()
         {
@@ -61,9 +30,8 @@ namespace GUI
             // Default check-out time is after check-in 1 day at 14 o'clock
             checkOut = new DateTime(checkIn.Year, checkIn.Month, checkIn.Day + 1, 14, 0, 0);
 
-
             // Get the MaPhieuDat by concatenating the prefix "PD" with the value selected in the Identify table as the suffix
-            string maPhieuDat = $"PD{(IdentifyBLL.GetCounter("PhieuDatPhong") + 1).ToString().PadLeft(5, '0')}";
+            var maPhieuDat = $"PD{(IdentifyBLL.GetCounter("PhieuDatPhong") + 1).ToString().PadLeft(5, '0')}";
             // Initialize PhieuDatPhong
             PhieuDatPhong = new tb_PhieuDatPhong
             {
@@ -72,13 +40,8 @@ namespace GUI
                 NgayLap = DateTime.Now,
                 DaHuy = false
             };
-
         }
 
-        /// <summary>
-        /// Flag to stop date or time's EditValueChanged event from firing when form load
-        /// </summary>
-        private bool isFormLoad = true;
         private void FmDatPhong_Load(object sender, EventArgs e)
         {
             // Load list box control KhachHang
@@ -93,24 +56,60 @@ namespace GUI
 
             AddRecordPhong(Phongs);
 
-            UcSanPhamDichVu ucSanPhamDichVu = new UcSanPhamDichVu(ctDatPhongs);
+            var ucSanPhamDichVu = new UcSanPhamDichVu(ctDatPhongs);
             ucSanPhamDichVu.Dock = DockStyle.Fill;
             tabNavigationPage2.Controls.Add(ucSanPhamDichVu);
             isFormLoad = false;
         }
 
-        #region Prepare data
+        #region Global variable
+
         /// <summary>
-        /// Load data for list box KhachHang control 
+        ///     Check-in time
+        /// </summary>
+        private DateTime checkIn;
+
+        /// <summary>
+        ///     Check-out time
+        /// </summary>
+        private DateTime checkOut;
+
+        /// <summary>
+        ///     List of details reserved ticket
+        /// </summary>
+        private readonly List<tb_CTDatPhong> ctDatPhongs = new List<tb_CTDatPhong>();
+
+        private double totalAmount;
+
+        #endregion Global variable
+
+        #region Property
+
+        /// <summary>
+        ///     Reserved ticket
+        /// </summary>
+        public tb_PhieuDatPhong PhieuDatPhong { get; set; }
+
+        /// <summary>
+        ///     List of room
+        /// </summary>
+        public List<tb_Phong> Phongs { get; set; }
+
+        #endregion Property
+
+        #region Prepare data
+
+        /// <summary>
+        ///     Load data for list box KhachHang control
         /// </summary>
         private void LoadListBoxKhachHang()
         {
-            List<tb_KhachHang> khachHangs = KhachHangBLL.GetCustomers();
+            var khachHangs = KhachHangBLL.GetCustomers();
             lstBoxKhachHang.Items.AddRange(khachHangs.Select(x => $"{x.CCCD} - {x.HoTen}").ToArray());
         }
 
         /// <summary>
-        /// Add rows of data to datagridview
+        ///     Add rows of data to datagridview
         /// </summary>
         /// <param name="phongs">List of room</param>
         private void AddRecordPhong(List<tb_Phong> phongs)
@@ -118,10 +117,7 @@ namespace GUI
             try
             {
                 // First make sure the datagridview has been initialized
-                if (dgvCTDatPhong.Columns.Count == 0)
-                {
-                    AddHeaderDgv();
-                }
+                if (dgvCTDatPhong.Columns.Count == 0) AddHeaderDgv();
 
                 // Clear datagridview
                 dgvCTDatPhong.Rows.Clear();
@@ -130,17 +126,15 @@ namespace GUI
                 ctDatPhongs.Clear();
                 foreach (var phong in phongs)
                 {
-                    bool isExist = false;
-                    tb_CTDatPhong ctDatPhong = new tb_CTDatPhong();
+                    var isExist = false;
+                    var ctDatPhong = new tb_CTDatPhong();
                     foreach (var ctdp in tmpCTDatPhongs)
-                    {
                         if (ctdp.MaPhong.Equals(phong.MaPhong))
                         {
                             ctDatPhong = ctdp;
                             isExist = true;
                             break;
                         }
-                    }
 
                     if (!isExist)
                     {
@@ -161,7 +155,9 @@ namespace GUI
                     ctDatPhongs.Add(ctDatPhong);
 
                     // Add to datagridview
-                    dgvCTDatPhong.Rows.Add(dgvCTDatPhong.Rows.Count + 1, ctDatPhong.MaPhong, phong.TenPhong, phong.tb_LoaiPhong.TenLoaiPhong, ctDatPhong.SoLuongNguoiLon, ctDatPhong.SoLuongTreEm, ctDatPhong.CheckIn, ctDatPhong.CheckOut);
+                    dgvCTDatPhong.Rows.Add(dgvCTDatPhong.Rows.Count + 1, ctDatPhong.MaPhong, phong.TenPhong,
+                        phong.tb_LoaiPhong.TenLoaiPhong, ctDatPhong.SoLuongNguoiLon, ctDatPhong.SoLuongTreEm,
+                        ctDatPhong.CheckIn, ctDatPhong.CheckOut);
                 }
             }
             catch (Exception ex)
@@ -171,7 +167,7 @@ namespace GUI
         }
 
         /// <summary>
-        /// Initialize datagridview columns
+        ///     Initialize datagridview columns
         /// </summary>
         private void AddHeaderDgv()
         {
@@ -189,11 +185,13 @@ namespace GUI
             dgvCTDatPhong.Columns["NguoiLon"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvCTDatPhong.Columns["TreEm"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
-        #endregion
+
+        #endregion Prepare data
 
         #region Validate form
 
-        private ErrorProvider errorProvider = new ErrorProvider();
+        private readonly ErrorProvider errorProvider = new ErrorProvider();
+
         private bool IsValidForm()
         {
             return IsValidCheckin() && IsValidCheckout() && IsValidCustomer() && IsValidDeposit();
@@ -206,11 +204,9 @@ namespace GUI
                 errorProvider.SetError(lblCheckin, "Thời gian check-in không hợp lệ.");
                 return false;
             }
-            else
-            {
-                errorProvider.SetError(lblCheckin, string.Empty);
-                return true;
-            }
+
+            errorProvider.SetError(lblCheckin, string.Empty);
+            return true;
         }
 
         private bool IsValidCheckout()
@@ -220,11 +216,9 @@ namespace GUI
                 errorProvider.SetError(lblCheckin, "Thời gian check-out không hợp lệ.");
                 return false;
             }
-            else
-            {
-                errorProvider.SetError(lblCheckin, string.Empty);
-                return true;
-            }
+
+            errorProvider.SetError(lblCheckin, string.Empty);
+            return true;
         }
 
         private bool IsValidCustomer()
@@ -234,11 +228,9 @@ namespace GUI
                 errorProvider.SetError(lblKhachHang, "Khách hàng không hợp lệ.");
                 return false;
             }
-            else
-            {
-                errorProvider.SetError(lblKhachHang, string.Empty);
-                return true;
-            }
+
+            errorProvider.SetError(lblKhachHang, string.Empty);
+            return true;
         }
 
         private bool IsValidDeposit()
@@ -248,13 +240,12 @@ namespace GUI
                 errorProvider.SetError(lblTraTruoc, "Số tiền không hợp lệ.");
                 return false;
             }
-            else
-            {
-                errorProvider.SetError(lblTraTruoc, string.Empty);
-                return true;
-            }
+
+            errorProvider.SetError(lblTraTruoc, string.Empty);
+            return true;
         }
-        #endregion
+
+        #endregion Validate form
 
         #region Handle event
 
@@ -267,13 +258,9 @@ namespace GUI
         private void SearchControl1_EditValueChanged(object sender, EventArgs e)
         {
             if (searchControl1.Text == null || searchControl1.Text.Trim().Length == 0)
-            {
                 lstBoxKhachHang.Visible = false;
-            }
             else
-            {
                 lstBoxKhachHang.Visible = true;
-            }
         }
 
         private void LstBoxKhachHang_SelectedIndexChanged(object sender, EventArgs e)
@@ -293,13 +280,10 @@ namespace GUI
         private void BtnSave_Click(object sender, EventArgs e)
         {
             // Valid form
-            if (!IsValidForm())
-            {
-                return;
-            }
+            if (!IsValidForm()) return;
 
             // Reserved ticket
-            string cccd = txtKhachHang.Text.Split('-')[0].Trim();
+            var cccd = txtKhachHang.Text.Split('-')[0].Trim();
             PhieuDatPhong.CCCD = cccd;
             PhieuDatPhong.TraTruoc = numerTraTruoc.Value;
             PhieuDatPhong.LoaiHinh = cboxLoaiHinh.Text;
@@ -318,11 +302,8 @@ namespace GUI
 
         private void BtnThemPhong_Click(object sender, EventArgs e)
         {
-            fmChonThemPhong fmChonThemPhong = new fmChonThemPhong(Phongs, null);
-            fmChonThemPhong.FormClosed += (o, args) =>
-            {
-                AddRecordPhong(Phongs);
-            };
+            var fmChonThemPhong = new fmChonThemPhong(Phongs, null);
+            fmChonThemPhong.FormClosed += (o, args) => { AddRecordPhong(Phongs); };
             fmChonThemPhong.ShowDialog();
         }
 
@@ -335,47 +316,44 @@ namespace GUI
         {
             if (!isFormLoad)
             {
-                DateTime date = DateTime.Parse(dateFrom.Text);
-                DateTime time = DateTime.Parse(timeFrom.Text);
+                var date = DateTime.Parse(dateFrom.Text);
+                var time = DateTime.Parse(timeFrom.Text);
                 checkIn = new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second);
                 IsValidCheckin();
                 CalcTotalAmount();
             }
-
         }
 
         private void TimeFrom_EditValueChanged(object sender, EventArgs e)
         {
             if (!isFormLoad)
             {
-                DateTime date = DateTime.Parse(dateFrom.Text);
-                DateTime time = DateTime.Parse(timeFrom.Text);
+                var date = DateTime.Parse(dateFrom.Text);
+                var time = DateTime.Parse(timeFrom.Text);
                 checkIn = new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second);
                 IsValidCheckin();
                 CalcTotalAmount();
             }
-
         }
 
         private void DateTo_EditValueChanged(object sender, EventArgs e)
         {
             if (!isFormLoad)
             {
-                DateTime date = DateTime.Parse(dateTo.Text);
-                DateTime time = DateTime.Parse(timeTo.Text);
+                var date = DateTime.Parse(dateTo.Text);
+                var time = DateTime.Parse(timeTo.Text);
                 checkOut = new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second);
                 IsValidCheckout();
                 CalcTotalAmount();
             }
-
         }
 
         private void TimeTo_EditValueChanged(object sender, EventArgs e)
         {
             if (!isFormLoad)
             {
-                DateTime date = DateTime.Parse(dateTo.Text);
-                DateTime time = DateTime.Parse(timeTo.Text);
+                var date = DateTime.Parse(dateTo.Text);
+                var time = DateTime.Parse(timeTo.Text);
                 checkOut = new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second);
                 IsValidCheckout();
                 CalcTotalAmount();
@@ -392,9 +370,9 @@ namespace GUI
             IsValidCustomer();
         }
 
-        private void TabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
+        private void TabPane1_SelectedPageChanged(object sender, SelectedPageChangedEventArgs e)
         {
-            UcSanPhamDichVu ucSanPhamDichVu = new UcSanPhamDichVu(ctDatPhongs)
+            var ucSanPhamDichVu = new UcSanPhamDichVu(ctDatPhongs)
             {
                 Dock = DockStyle.Fill
             };
@@ -402,6 +380,7 @@ namespace GUI
             tabNavigationPage2.Controls.Add(ucSanPhamDichVu);
             CalcTotalAmount();
         }
-        #endregion
+
+        #endregion Handle event
     }
 }

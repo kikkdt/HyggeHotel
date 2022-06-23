@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class fmDsNhanPhong : Form
+    public partial class fmDsNhanPhong : DevExpress.XtraEditors.XtraForm
     {
         public fmDsNhanPhong()
         {
@@ -19,7 +11,6 @@ namespace GUI
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

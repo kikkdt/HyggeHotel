@@ -1,0 +1,26 @@
+C:\Users\hungt\OneDrive\Desktop\New folder\New folder\HyggeHotel\DTO\bin\Debug\DTO.dll.config
+C:\Users\hungt\OneDrive\Desktop\New folder\New folder\HyggeHotel\DTO\bin\Debug\DTO.dll
+C:\Users\hungt\OneDrive\Desktop\New folder\New folder\HyggeHotel\DTO\bin\Debug\DTO.pdb
+C:\Users\hungt\OneDrive\Desktop\New folder\New folder\HyggeHotel\DTO\obj\Debug\DTO.dll
+C:\Users\hungt\OneDrive\Desktop\New folder\New folder\HyggeHotel\DTO\obj\Debug\DTO.pdb
+C:\Users\hungt\OneDrive\Desktop\New folder\New folder\HyggeHotel\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\hungt\OneDrive\Desktop\HyggeHotel\DTO\bin\Debug\DTO.dll.config
+C:\Users\hungt\OneDrive\Desktop\HyggeHotel\DTO\bin\Debug\DTO.dll
+C:\Users\hungt\OneDrive\Desktop\HyggeHotel\DTO\bin\Debug\DTO.pdb
+C:\Users\hungt\OneDrive\Desktop\HyggeHotel\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\hungt\OneDrive\Desktop\HyggeHotel\DTO\obj\Debug\DTO.dll
+C:\Users\hungt\OneDrive\Desktop\HyggeHotel\DTO\obj\Debug\DTO.pdb
+E:\HyggeHotel\HyggeHotel\DTO\bin\Debug\DTO.dll.config
+E:\HyggeHotel\HyggeHotel\DTO\bin\Debug\DTO.dll
+E:\HyggeHotel\HyggeHotel\DTO\bin\Debug\DTO.pdb
+E:\HyggeHotel\HyggeHotel\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+E:\HyggeHotel\HyggeHotel\DTO\obj\Debug\DTO.dll
+E:\HyggeHotel\HyggeHotel\DTO\obj\Debug\DTO.pdb
+D:\Projects\3. Do an HK6\Software testing\Software testing_final\Software testing_final\HyggeHotel\DTO\bin\Debug\DTO.dll.config
+D:\Projects\3. Do an HK6\Software testing\Software testing_final\Software testing_final\HyggeHotel\DTO\bin\Debug\DTO.dll
+D:\Projects\3. Do an HK6\Software testing\Software testing_final\Software testing_final\HyggeHotel\DTO\bin\Debug\DTO.pdb
+D:\Projects\3. Do an HK6\Software testing\Software testing_final\Software testing_final\HyggeHotel\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\Projects\3. Do an HK6\Software testing\Software testing_final\Software testing_final\HyggeHotel\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\Projects\3. Do an HK6\Software testing\Software testing_final\Software testing_final\HyggeHotel\DTO\obj\Debug\DTO.dll
+D:\Projects\3. Do an HK6\Software testing\Software testing_final\Software testing_final\HyggeHotel\DTO\obj\Debug\DTO.pdb
+E:\HyggeHotel\HyggeHotel\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache

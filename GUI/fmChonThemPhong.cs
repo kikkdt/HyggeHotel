@@ -3,20 +3,14 @@ using DTO;
 using GUI.UserControls;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class fmChonThemPhong : Form
+    public partial class fmChonThemPhong : DevExpress.XtraEditors.XtraForm
     {
-        private List<tb_Phong> PhongSelecteds;
-        private List<tb_Phong> PhongExcepts;
+        private readonly List<tb_Phong> PhongExcepts;
+        private readonly List<tb_Phong> PhongSelecteds;
+
         public fmChonThemPhong(List<tb_Phong> phongSelecteds, List<tb_Phong> phongExcepts)
         {
             InitializeComponent();
@@ -31,11 +25,11 @@ namespace GUI
 
         private void LoadUI(List<tb_Phong> phongSelecteds, List<tb_Phong> phongExcepts)
         {
-            List<tb_TangLau> lstTangLau = TangLauBLL.GetFloors();
+            var lstTangLau = TangLauBLL.GetFloors();
 
-            foreach (tb_TangLau tangLau in lstTangLau)
+            foreach (var tangLau in lstTangLau)
             {
-                UcTangLau ucTang = new UcTangLau(tangLau, phongSelecteds, phongExcepts);
+                var ucTang = new UcTangLau(tangLau, phongSelecteds, phongExcepts);
                 ucTang.Parent = pnlContainer;
                 ucTang.Width = ucTang.Parent.Width - 50;
                 pnlContainer.Controls.Add(ucTang);

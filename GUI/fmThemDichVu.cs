@@ -2,26 +2,20 @@
 using DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class fmThemDichVu : Form
+    public partial class fmThemDichVu : DevExpress.XtraEditors.XtraForm
     {
-        private List<tb_CTDatPhong> _ctDatPhongs;
+        private readonly List<tb_CTDatPhong> _ctDatPhongs;
 
         public fmThemDichVu(List<tb_CTDatPhong> ctDatPhongs)
         {
             InitializeComponent();
             _ctDatPhongs = ctDatPhongs;
 
-            UcSanPhamDichVu ucSanPhamDichVu = new UcSanPhamDichVu(ctDatPhongs)
+            var ucSanPhamDichVu = new UcSanPhamDichVu(ctDatPhongs)
             {
                 Dock = DockStyle.Fill
             };
@@ -32,13 +26,12 @@ namespace GUI
         {
             CTDatPhong_SanPhamBLL.Update(_ctDatPhongs);
             Close();
-            string maPhieuDatPhong = _ctDatPhongs[0].MaPhieuDat;
+            var maPhieuDatPhong = _ctDatPhongs[0].MaPhieuDat;
             HoaDonBLL.UpdateTotalAmount(maPhieuDatPhong);
         }
 
         private void fmThemDichVu_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

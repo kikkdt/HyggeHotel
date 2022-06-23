@@ -1,18 +1,15 @@
-﻿using System;
+﻿using DTO;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
 
 namespace DAL
 {
     public class SanPhamDAL
     {
-        HyggeDbDataContext dataContext = new HyggeDbDataContext();
+        private readonly HyggeDbDataContext dataContext = new HyggeDbDataContext();
 
         /// <summary>
-        /// Get list of all products
+        ///     Get list of all products
         /// </summary>
         /// <returns>List of all products</returns>
         public List<tb_SanPham> GetProducts()
@@ -21,7 +18,7 @@ namespace DAL
         }
 
         /// <summary>
-        /// Get product by product ID
+        ///     Get product by product ID
         /// </summary>
         /// <param name="maSanPham">Product ID</param>
         /// <returns>Product</returns>
@@ -29,6 +26,5 @@ namespace DAL
         {
             return dataContext.tb_SanPhams.FirstOrDefault(sp => sp.MaSanPham.Equals(maSanPham));
         }
-        
     }
 }

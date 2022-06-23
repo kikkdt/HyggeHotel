@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DAL;
 using DTO;
-using DAL;
+using System.Collections.Generic;
 
 namespace BLL
 {
     public class SanPhamBLL
     {
         /// <summary>
-        /// Get list of all products
+        ///     Get list of all products
         /// </summary>
         /// <returns>List of all products</returns>
         public static List<tb_SanPham> GetProducts()
@@ -20,7 +16,7 @@ namespace BLL
         }
 
         /// <summary>
-        /// Get product by product ID
+        ///     Get product by product ID
         /// </summary>
         /// <param name="maSanPham">Product ID</param>
         /// <returns>Product</returns>
@@ -28,7 +24,5 @@ namespace BLL
         {
             return new SanPhamDAL().GetProducts(maSanPham);
         }
-       
-
     }
 }

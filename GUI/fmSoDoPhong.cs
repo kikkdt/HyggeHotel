@@ -1,19 +1,11 @@
 ﻿using BLL;
-using DTO;
 using GUI.UserControls;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class fmSoDoPhong : Form
+    public partial class fmSoDoPhong : DevExpress.XtraEditors.XtraForm
     {
         public fmSoDoPhong()
         {
@@ -23,10 +15,7 @@ namespace GUI
 
         private void FmSoDoPhong_Resize(object sender, EventArgs e)
         {
-            foreach (Control control in pnlContainer.Controls)
-            {
-                control.Width = control.Parent.Width - 50;
-            }
+            foreach (Control control in pnlContainer.Controls) control.Width = control.Parent.Width - 50;
         }
 
         private void LoadUI()
@@ -36,11 +25,11 @@ namespace GUI
             lblChuaDon.Text = $"Chưa dọn: {PhongBLL.Count("Chưa dọn")}";
             lblDangCoKhach.Text = $"Đang có khách: {PhongBLL.Count("Đang có khách")}";
 
-            List<tb_TangLau> lstTangLau = TangLauBLL.GetFloors();
+            var lstTangLau = TangLauBLL.GetFloors();
 
-            foreach (tb_TangLau tangLau in lstTangLau)
+            foreach (var tangLau in lstTangLau)
             {
-                UcTangLau ucTang = new UcTangLau(tangLau);
+                var ucTang = new UcTangLau(tangLau);
                 ucTang.Parent = pnlContainer;
                 ucTang.Width = ucTang.Parent.Width - 50;
                 pnlContainer.Controls.Add(ucTang);

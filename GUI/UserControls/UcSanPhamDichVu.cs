@@ -1,20 +1,17 @@
-﻿using DTO;
-using BLL;
+﻿using BLL;
+using DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
 {
     public partial class UcSanPhamDichVu : UserControl
     {
-        private List<tb_CTDatPhong> _ctDatPhongs;
+        private readonly List<tb_CTDatPhong> _ctDatPhongs;
+
         public UcSanPhamDichVu(List<tb_CTDatPhong> ctDatPhongs)
         {
             InitializeComponent();
@@ -30,7 +27,7 @@ namespace GUI
             foreach (var sanpham in sanphams)
             {
                 // Create UI
-                Button button = new Button
+                var button = new Button
                 {
                     Text = $"{sanpham.TenSanPham}\n{string.Format("{0:#,##0}", sanpham.DonGia)}",
                     Size = new Size(200, 60),
@@ -40,11 +37,10 @@ namespace GUI
                 // Handle event click
                 button.Click += (o, e) =>
                 {
-                    int index = dgvCTDatPhong.SelectedRows[0].Index;
+                    var index = dgvCTDatPhong.SelectedRows[0].Index;
                     // Check if already exist then increase the quantity
-                    tb_CTDatPhong ctDatPhongSelected = _ctDatPhongs.ElementAt(index);
+                    var ctDatPhongSelected = _ctDatPhongs.ElementAt(index);
                     foreach (var item in ctDatPhongSelected.tb_CTDatPhong_SanPhams)
-                    {
                         if (item.MaSanPham.Equals(sanpham.MaSanPham))
                         {
                             item.SoLuong++;
@@ -52,10 +48,9 @@ namespace GUI
                             DgvCTDatPhong_SelectionChanged(null, null);
                             return;
                         }
-                    }
 
                     // If it doesn't exist, create a new CTDatPhong_SanPham
-                    tb_CTDatPhong_SanPham ctDatPhong_SanPham = new tb_CTDatPhong_SanPham
+                    var ctDatPhong_SanPham = new tb_CTDatPhong_SanPham
                     {
                         MaSanPham = sanpham.MaSanPham,
                         SoLuong = 1,
@@ -72,9 +67,7 @@ namespace GUI
         private void LoadDgvCTDatPhong()
         {
             foreach (var ctDatPhong in _ctDatPhongs)
-            {
                 dgvCTDatPhong.Rows.Add(ctDatPhong.MaPhong, ctDatPhong.MaCTDatPhong);
-            }
         }
 
         private void DgvCTDatPhong_SelectionChanged(object sender, EventArgs e)
@@ -82,17 +75,19 @@ namespace GUI
             if (dgvCTDatPhong.Rows.Count == 0)
                 return;
 
-            string maPhongSelected = dgvCTDatPhong.SelectedRows[0].Cells["MaPhong"].Value.ToString();
+            var maPhongSelected = dgvCTDatPhong.SelectedRows[0].Cells["MaPhong"].Value.ToString();
             // Get CTDatPhong match with MaPhong
-            tb_CTDatPhong ctDatPhongSelected = _ctDatPhongs.FirstOrDefault(x => x.MaPhong.Equals(maPhongSelected));
+            var ctDatPhongSelected = _ctDatPhongs.FirstOrDefault(x => x.MaPhong.Equals(maPhongSelected));
 
             // Add to datagridview
             dgvSanPhamDichVu.Rows.Clear();
             foreach (var item in ctDatPhongSelected.tb_CTDatPhong_SanPhams)
             {
-                tb_SanPham sanPham = SanPhamBLL.GetProducts(item.MaSanPham);
+                var sanPham = SanPhamBLL.GetProducts(item.MaSanPham);
 
-                dgvSanPhamDichVu.Rows.Add(dgvSanPhamDichVu.Rows.Count + 1, sanPham.MaSanPham, sanPham.TenSanPham, string.Format("{0:#,##0}", sanPham.DonGia), item.SoLuong, string.Format("{0:#,##0}", sanPham.DonGia * item.SoLuong));
+                dgvSanPhamDichVu.Rows.Add(dgvSanPhamDichVu.Rows.Count + 1, sanPham.MaSanPham, sanPham.TenSanPham,
+                    string.Format("{0:#,##0}", sanPham.DonGia), item.SoLuong,
+                    string.Format("{0:#,##0}", sanPham.DonGia * item.SoLuong));
             }
         }
 
@@ -100,15 +95,17 @@ namespace GUI
         {
             if (e.ColumnIndex == 6)
             {
-                DataGridViewRow rowSelected = dgvSanPhamDichVu.Rows[e.RowIndex];
-                string maSanPham = rowSelected.Cells["MaSanPham"].Value.ToString();
+                var rowSelected = dgvSanPhamDichVu.Rows[e.RowIndex];
+                var maSanPham = rowSelected.Cells["MaSanPham"].Value.ToString();
 
-                string maPhongSelected = dgvCTDatPhong.SelectedRows[0].Cells["MaPhong"].Value.ToString();
+                var maPhongSelected = dgvCTDatPhong.SelectedRows[0].Cells["MaPhong"].Value.ToString();
                 // Get product want to delete
-                tb_CTDatPhong_SanPham productDelete = _ctDatPhongs.FirstOrDefault(x => x.MaPhong.Equals(maPhongSelected)).tb_CTDatPhong_SanPhams.FirstOrDefault(x => x.MaSanPham.Equals(maSanPham));
+                var productDelete = _ctDatPhongs.FirstOrDefault(x => x.MaPhong.Equals(maPhongSelected))
+                    .tb_CTDatPhong_SanPhams.FirstOrDefault(x => x.MaSanPham.Equals(maSanPham));
 
                 // Delete product from list
-                _ctDatPhongs.FirstOrDefault(x => x.MaPhong.Equals(maPhongSelected)).tb_CTDatPhong_SanPhams.Remove(productDelete);
+                _ctDatPhongs.FirstOrDefault(x => x.MaPhong.Equals(maPhongSelected)).tb_CTDatPhong_SanPhams
+                    .Remove(productDelete);
 
                 // Refresh datagridview
                 DgvCTDatPhong_SelectionChanged(null, null);
@@ -117,7 +114,6 @@ namespace GUI
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
-
         }
     }
 }

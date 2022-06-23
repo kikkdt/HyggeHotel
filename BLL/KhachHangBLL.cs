@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DAL;
 using DTO;
-using DAL;
+using System.Collections.Generic;
 
 namespace BLL
 {
     public class KhachHangBLL
     {
         /// <summary>
-        /// Get a customer by id
+        ///     Get a customer by id
         /// </summary>
         /// <param name="id">Customer ID</param>
         /// <returns>A customer</returns>
@@ -21,7 +17,7 @@ namespace BLL
         }
 
         /// <summary>
-        /// Get a list of all customers
+        ///     Get a list of all customers
         /// </summary>
         /// <returns>List of all customers</returns>
         public static List<tb_KhachHang> GetCustomers()

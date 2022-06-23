@@ -1,23 +1,20 @@
 ﻿using DAL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {
     public class TaiKhoanBLL
     {
-        public static bool checkUsernameExist(String username)
+        public static bool checkUsernameExist(string username)
         {
             return new TaiKhoanDAL().checkUsernameExist(username);
         }
-        public static bool checkPassword(String username, String password)
+
+        public static bool checkPassword(string username, string password)
         {
             return new TaiKhoanDAL().checkPassword(username, password);
         }
-        public static bool changePassword(String username, String passwordOld, String passwordNew)
+
+        public static bool changePassword(string username, string passwordOld, string passwordNew)
         {
             return new TaiKhoanDAL().changePassword(username, passwordOld, passwordNew);
         }

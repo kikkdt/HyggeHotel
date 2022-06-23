@@ -1,17 +1,14 @@
-﻿using System;
+﻿using DTO;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
 
 namespace DAL
 {
     public class DatPhongDAL
     {
-        private HyggeDbDataContext dataContext = new HyggeDbDataContext();
+        private readonly HyggeDbDataContext dataContext = new HyggeDbDataContext();
+
         /// <summary>
-        /// Perform reservation
+        ///     Perform reservation
         /// </summary>
         /// <param name="phieuDatPhong">Reserved ticket</param>
         /// <param name="ctDatPhongs">List of detail reserved ticket</param>
@@ -25,7 +22,7 @@ namespace DAL
         }
 
         /// <summary>
-        /// Perform check-in
+        ///     Perform check-in
         /// </summary>
         /// <param name="phieuDatPhong">Reserved ticket</param>
         /// <param name="ctDatPhongs">List of detail reserved ticket</param>

@@ -36,10 +36,20 @@ namespace DTO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HUNGTRAN\\HUNGTRAN;Initial Catalog=dbQLKS;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NEMO;Initial Catalog=dbQLKS;Integrated Security=True")]
         public string dbQLKSConnectionString1 {
             get {
                 return ((string)(this["dbQLKSConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=minhtampc;Initial Catalog=dbQLKS;User ID=sa;Password=123")]
+        public string dbQLKSConnectionString2 {
+            get {
+                return ((string)(this["dbQLKSConnectionString2"]));
             }
         }
     }

@@ -1,25 +1,24 @@
-﻿using System;
+﻿using DTO;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
 
 namespace DAL
 {
     public class CTDatPhong_SanPhamDAL
     {
-        private HyggeDbDataContext dataContext = new HyggeDbDataContext();
+        private readonly HyggeDbDataContext dataContext = new HyggeDbDataContext();
+
         public void Update(List<tb_CTDatPhong> ctDatPhongs)
         {
             foreach (var ct in ctDatPhongs)
             {
-                var ctDatPhong = dataContext.tb_CTDatPhongs.Where(x => x.MaCTDatPhong.Equals(ct.MaCTDatPhong)).FirstOrDefault();
+                var ctDatPhong = dataContext.tb_CTDatPhongs.Where(x => x.MaCTDatPhong.Equals(ct.MaCTDatPhong))
+                    .FirstOrDefault();
                 dataContext.tb_CTDatPhong_SanPhams.DeleteAllOnSubmit(ctDatPhong.tb_CTDatPhong_SanPhams);
 
-                foreach(var sanpham in ct.tb_CTDatPhong_SanPhams)
+                foreach (var sanpham in ct.tb_CTDatPhong_SanPhams)
                 {
-                    tb_CTDatPhong_SanPham tmp = new tb_CTDatPhong_SanPham();
+                    var tmp = new tb_CTDatPhong_SanPham();
                     tmp.MaSanPham = sanpham.MaSanPham;
                     tmp.MaCTDatPhong = sanpham.MaCTDatPhong;
                     tmp.SoLuong = sanpham.SoLuong;
@@ -27,6 +26,7 @@ namespace DAL
                     ctDatPhong.tb_CTDatPhong_SanPhams.Add(tmp);
                 }
             }
+
             dataContext.SubmitChanges();
         }
 

@@ -1,18 +1,15 @@
-﻿using System;
+﻿using DTO;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
 
 namespace DAL
 {
     public class KhachHangDAL
     {
-        HyggeDbDataContext dataContext = new HyggeDbDataContext();
+        private readonly HyggeDbDataContext dataContext = new HyggeDbDataContext();
 
         /// <summary>
-        /// Get a customer by id
+        ///     Get a customer by id
         /// </summary>
         /// <param name="id">Customer ID</param>
         /// <returns>A customer</returns>
@@ -22,7 +19,7 @@ namespace DAL
         }
 
         /// <summary>
-        /// Get a list of all customers
+        ///     Get a list of all customers
         /// </summary>
         /// <returns>List of all customers</returns>
         public List<tb_KhachHang> GetCustomers()

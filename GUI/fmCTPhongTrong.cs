@@ -1,25 +1,18 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DTO;
 
 namespace GUI
 {
-    public partial class fmCTPhongTrong : Form
+    public partial class fmCTPhongTrong : DevExpress.XtraEditors.XtraForm
     {
-        public tb_Phong Phong { get; set; }
-
         public fmCTPhongTrong(tb_Phong phong)
         {
             InitializeComponent();
             Phong = phong;
         }
+
+        public tb_Phong Phong { get; set; }
 
         private void FmCTPhongTrong_Load(object sender, EventArgs e)
         {
@@ -31,12 +24,9 @@ namespace GUI
 
         private void BtnNhanPhong_Click(object sender, EventArgs e)
         {
-            fmNhanPhong fmNhanPhong = new fmNhanPhong(new List<tb_Phong> { Phong });
+            var fmNhanPhong = new fmNhanPhong(new List<tb_Phong> { Phong });
             Close();
-            fmNhanPhong.FormClosed += (o, evt) =>
-            {
-                fmDangNhap.mainForm.barBtnSoDoPhong.PerformClick();
-            };
+            fmNhanPhong.FormClosed += (o, evt) => { fmDangNhap.mainForm.barBtnSoDoPhong.PerformClick(); };
             fmNhanPhong.ShowDialog();
         }
     }
